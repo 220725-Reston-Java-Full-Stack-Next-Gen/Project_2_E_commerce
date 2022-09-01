@@ -5,6 +5,7 @@
     --text-secondary: #ececec;
     --bg-primary: #fff3ea;
     --bg-secondary: #fff3eacb;
+    --hover: #95654fc3;
 }
 
 body {
@@ -57,6 +58,10 @@ header{
     width: 1rem;
     padding: 0 7px;
 }
+#search-button:hover .icon-svg{
+    fill: var(--hover);
+
+}
 .nav-links{
     list-style: none;
 }
@@ -68,8 +73,27 @@ header{
     transition: all 0.3ms ease 0s;
 }
 .nav-links li a:hover{
-    color: #95654fc3;
+    color: var(--hover);
 }
 ul{
     padding: 0;
+}
+#search-button{
+    border-radius: 20px;
+    fill: none;
+    border-width: 0;
+    background: var(--bg-secondary);
+}
+#search-button:hover{
+    /* background: #fffffff8; */
+}
+.nav-button{
+    border-radius: 20px;
+    fill: none;
+    border-width: 0;
+    background: var(--bg-secondary);
+}
+.nav-button:hover .icon-svg{
+    fill: var(--hover);
+    /* background: #00000010; */
 }
