@@ -93,7 +93,7 @@ None currently
 ![Physical](imgs/physical.jpg)
 ![State Chart](imgs/state-chart.jpg)
 ![Use Case](imgs/use-case.jpg)
-![Website Example] (imgs/website-ex.png)
+![Website Example](imgs/website-ex.png)
 
 ***
 ### Technical Requirements
