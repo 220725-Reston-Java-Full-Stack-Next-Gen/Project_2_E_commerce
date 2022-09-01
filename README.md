@@ -88,7 +88,7 @@ None currently
 ***
 
 ![Design Pattern Layout](imgs/P1DesignPatternLayout.png)
-![Activity](imgs/activity.jpg)
+![Activity](imgs/activity.jpeg)
 ![Logical](imgs/logical.jpg)
 ![Physical](imgs/physical.jpg)
 ![State Chart](imgs/state-chart.jpg)
