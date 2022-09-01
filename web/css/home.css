@@ -84,9 +84,6 @@ ul{
     border-width: 0;
     background: var(--bg-secondary);
 }
-#search-button:hover{
-    /* background: #fffffff8; */
-}
 .nav-button{
     border-radius: 20px;
     fill: none;
