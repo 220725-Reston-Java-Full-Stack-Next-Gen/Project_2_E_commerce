@@ -104,7 +104,7 @@ You are required to adhere to the following technical stacks:
 - CSS
 - JavaScript
 - PostgreSQL (hosted on AWS RDS or localhost)
-- Spring 5
+- Spring Boot
 - JUnit
 - Mockito
 
