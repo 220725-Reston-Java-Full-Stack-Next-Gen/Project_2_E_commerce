@@ -87,7 +87,6 @@ None currently
 ### Flowcharts
 ***
 
-![Design Pattern Layout](imgs/P1DesignPatternLayout.png)
 ![Activity](imgs/activity.jpeg)
 ![Logical](imgs/logical.jpg)
 ![Use Case](imgs/UseCaseDiagram.pdf)
