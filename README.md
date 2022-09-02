@@ -90,10 +90,8 @@ None currently
 ![Design Pattern Layout](imgs/P1DesignPatternLayout.png)
 ![Activity](imgs/activity.jpeg)
 ![Logical](imgs/logical.jpg)
-![Physical](imgs/physical.jpg)
-![State Chart](imgs/state-chart.jpg)
-![Use Case](imgs/use-case.jpg)
-![Website Example] (imgs/website-ex.png)
+![Use Case](imgs/UseCaseDiagram.pdf)
+![Website Example](imgs/website-ex.png)
 
 ***
 ### Technical Requirements
@@ -104,7 +102,7 @@ You are required to adhere to the following technical stacks:
 - CSS
 - JavaScript
 - PostgreSQL (hosted on AWS RDS or localhost)
-- Spring 5
+- Spring Boot
 - JUnit
 - Mockito
 
@@ -113,4 +111,3 @@ You are required to adhere to the following technical stacks:
 ***
 
 Makeup API (makeup-api.herokuapp.com)
-- Postman# Project_2_E_commerce
