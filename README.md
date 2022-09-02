@@ -89,7 +89,7 @@ None currently
 
 ![Activity](imgs/activity.jpeg)
 ![Logical](imgs/logical.jpg)
-![Use Case](imgs/UseCaseDiagram.pdf)
+![Use Case](imgs/UseCaseDiagram.jpg)
 ![Website Example](imgs/website-ex.png)
 
 ***
