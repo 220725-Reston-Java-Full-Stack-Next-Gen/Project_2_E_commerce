@@ -90,7 +90,11 @@ None currently
 ![Design Pattern Layout](imgs/P1DesignPatternLayout.png)
 ![Activity](imgs/activity.jpeg)
 ![Logical](imgs/logical.jpg)
+<<<<<<< HEAD
 ![Use Case](imgs/UseCaseDiagram.pdf)
+=======
+![Use Case](imgs/use-case.jpg)
+>>>>>>> branch 'Samantha's-Branch' of git@github.com:220725-Reston-Java-Full-Stack-Next-Gen/Project_2_E_commerce.git
 ![Website Example](imgs/website-ex.png)
 
 ***
@@ -110,4 +114,9 @@ You are required to adhere to the following technical stacks:
 ### External API used
 ***
 
+<<<<<<< HEAD
 Makeup API (makeup-api.herokuapp.com)
+=======
+Makeup API (makeup-api.herokuapp.com)
+- Postman# Project_2_E_commerce
+>>>>>>> branch 'Samantha's-Branch' of git@github.com:220725-Reston-Java-Full-Stack-Next-Gen/Project_2_E_commerce.git
