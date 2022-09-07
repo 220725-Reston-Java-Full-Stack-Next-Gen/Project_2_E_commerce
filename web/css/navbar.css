@@ -1,0 +1,49 @@
+:root {
+    font-size: 16px;
+    font-family: 'Lato';
+    --text-primary: #95654f;
+    --text-secondary: #ececec;
+    --bg-primary: #fff3ea;
+    --bg-secondary: #fff3eacb;
+    --hover: #95654fc3;
+}
+
+body {
+    color: var(--text-primary);
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .01);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+}
+main{
+    margin: 0 1rem;
+}
+.wrapper{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .1rem;
+    grid-auto-rows: minmax(100px,auto);
+    width: 95vw;
+}
+.grid-item{
+
+    border-width: 2px;
+    border-color: #95654f;
+    background: #fafafa;
+    border-style: none;
+}
+.homeImg{
+    width: 30vw;
+}
+
