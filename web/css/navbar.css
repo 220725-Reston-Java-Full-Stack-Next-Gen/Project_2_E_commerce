@@ -46,7 +46,9 @@ main{
 .homeImg{
     width: 30vw;
 }
-
+#logo{
+    height: 2.2rem;
+}
 .fa-primary{
     height: 1.8rem;
     width: 1.3rem;
@@ -73,9 +75,12 @@ main{
     --bs-btn-active-border-color:var(--text-primary);
     --bs-btn-active-color: var(--text-primary);
 }
-.form-control:focus {
+.form-control {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    background-color:var(--bg-primary);
+}.form-control:focus {
     border-color: var(--text-primary);
     box-shadow: none;
     background-color:var(--bg-primary);
-
 }
