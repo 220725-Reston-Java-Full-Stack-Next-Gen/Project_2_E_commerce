@@ -47,3 +47,29 @@ main{
     width: 30vw;
 }
 
+.fa-primary{
+    height: 1.8rem;
+    width: 1.3rem;
+}
+#cart{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.navbar{
+    background-color: var(--bg-primary);
+    --bs-navbar-toggler-font-size: 1rem;
+    --bs-navbar-toggler-focus-width: 0.025rem;
+    --bs-navbar-toggler-border-color: var(--text-primary);
+}.navbar a{
+    color: var(--text-primary);
+}
+.btn-outline-success{
+    --bs-btn-color: var(--text-primary);
+    --bs-btn-border-color: var(--text-primary);
+    --bs-btn-hover-bg: var(--text-primary);
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-bg: var(--bg-primary);
+    --bs-btn-active-border-color:var(--text-primary);
+    --bs-btn-active-color: var(--text-primary);
+}
