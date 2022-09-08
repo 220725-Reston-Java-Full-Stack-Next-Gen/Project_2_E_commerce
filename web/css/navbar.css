@@ -73,3 +73,9 @@ main{
     --bs-btn-active-border-color:var(--text-primary);
     --bs-btn-active-color: var(--text-primary);
 }
+.form-control:focus {
+    border-color: var(--text-primary);
+    box-shadow: none;
+    background-color:var(--bg-primary);
+
+}
