@@ -1,0 +1,85 @@
+body {
+    background-color: #fff3ea;
+}
+
+.navbar {
+    background-color: #95654f;
+}
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+#mainInfoDiv {
+    margin-bottom: 1rem;
+}
+
+#searchBar {
+    text-align: center !important;
+    font-size: 14px !important;
+    padding: 0.5rem !important;
+}
+
+#formHolder input {
+    text-align: center;
+}
+
+.border-5 {
+    border-width: 5px !important;
+    border-color: #304051 !important;
+}
+
+.product-holder-template {
+    background-color: #bab099 !important;
+
+}
+
+.product-image-holder {
+    width: 90% !important;
+}
+
+.price-text {
+    font-weight: bold !important;
+}
+
+.bold-text {
+    font-weight: bold !important;
+}
+
+.no-margin-text {
+    margin: 0;
+}
+
+.star-rating {
+    color: gold;
+}
+
+#scrollUpHolder {
+   width:50px;
+   position: fixed;
+   bottom: 50px;
+   right: 60px;
+}
+#scrollUpButton {
+    width: 100%;
+    font-size: 36px;
+    cursor: pointer;
+    color: white;
+    background-color: #304051;
+}
+
+#ordersHolder {
+    width: 80%;   
+}
+
+.order-product-image-holder {
+    width: 50%;
+}
+
+.pill-button {
+    border-radius: 28px !important;
+}
+
+.dashed-border {
+    border-style: dashed !important;
+}
