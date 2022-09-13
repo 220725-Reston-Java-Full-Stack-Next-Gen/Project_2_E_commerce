@@ -1,0 +1,89 @@
+:root {
+    
+    --text-primary: #95654f;
+    --text-secondary: #ececec;
+    --bg-primary: #fff3ea;
+    --bg-secondary: #fff3eacb;
+    --hover: #95654fc3;
+}
+
+body {
+    /* color: var(--text-primary); */
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .01);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+}
+
+#logo {
+    height: 2.2rem;
+}
+
+.fa-primary {
+    height: 1rem;
+    width: 1.3rem;
+}
+
+#cart {
+    height: 1rem;
+    width: 1.5rem;
+}
+
+.navbar {
+    background-color: var(--bg-primary);
+    --bs-navbar-toggler-font-size: 1rem;
+    --bs-navbar-toggler-focus-width: 0.025rem;
+    --bs-navbar-toggler-border-color: var(--text-primary);
+}
+
+.navbar a {
+    color: var(--text-primary);
+}
+
+.btn-outline-success {
+    --bs-btn-color: var(--text-primary);
+    --bs-btn-border-color: var(--text-primary);
+    --bs-btn-hover-bg: var(--text-primary);
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-bg: var(--bg-primary);
+    --bs-btn-active-border-color: var(--text-primary);
+    --bs-btn-active-color: var(--text-primary);
+}
+
+.form-control {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.form-control:focus {
+    border-color: var(--text-primary);
+    box-shadow: none;
+    background-color: var(--bg-primary);
+}
+
+
+@media (min-width: 992px){
+    .nav-text{
+        display: none;
+    }
+    
+}
+@media (max-width: 992px){
+    .fa-primary{
+        display: none;
+    }
+    
+}

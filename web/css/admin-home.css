@@ -2,9 +2,9 @@ body {
     background-color: #fff3ea;
 }
 
-.navbar {
+/* .navbar {
     background-color: #95654f;
-}
+} */
 .dropdown-menu-end {
     right: 0;
     left: auto;
@@ -12,6 +12,10 @@ body {
 
 #mainInfoDiv {
     margin-bottom: 1rem;
+}
+
+.button-width {
+    width: 150px;
 }
 
 #searchBar {
@@ -24,10 +28,6 @@ body {
     text-align: center;
 }
 
-.border-5 {
-    border-width: 5px !important;
-    border-color: #304051 !important;
-}
 
 .product-holder-template {
     background-color: #bab099 !important;
@@ -82,4 +82,24 @@ body {
 
 .dashed-border {
     border-style: dashed !important;
+}
+
+.salesCarousel {
+    
+}
+
+.cropped {
+    height: 250px;
+    object-fit: cover;
+    object-position: 25% 25%;
+    box-shadow:
+                0px 0px 0.5px rgba(0, 0, 0, -0.028),
+                0px 0px 1.3px rgba(0, 0, 0, -0.007),
+                0px 0px 2.4px rgba(0, 0, 0, 0.036),
+                0px 0px 4.2px rgba(0, 0, 0, 0.096),
+                0px 0px 7.9px rgba(0, 0, 0, 0.174),
+                0px 0px 19px rgba(0, 0, 0, 0.3)
+                ;
+
+
 }
