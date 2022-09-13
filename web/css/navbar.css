@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
-    background-color: var(--bg-primary);
+    background: var(--bg-primary);
     --bs-navbar-toggler-font-size: 1rem;
     --bs-navbar-toggler-focus-width: 0.025rem;
     --bs-navbar-toggler-border-color: var(--text-primary);
@@ -49,7 +49,10 @@ body::-webkit-scrollbar-thumb {
 .navbar a {
     color: var(--text-primary);
 }
-
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
 .btn-outline-success {
     color: var(--text-primary);
     border-color: var(--text-primary);
@@ -63,7 +66,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #95654f;
     border-color: #95654f;
     box-shadow: 0 0 0 0.2rem #95654f71;
-    
 }
 .btn-outline-success.focus, .btn-outline-success:focus {
     box-shadow: none;
