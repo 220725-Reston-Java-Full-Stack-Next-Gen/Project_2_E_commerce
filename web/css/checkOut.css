@@ -12,3 +12,29 @@
 .form-check{
     float: left;
 }
+
+.form-control::placeholder{
+    color:#95654f;
+}
+
+.valid-feedback{
+    text-align: left;
+}
+
+.invalid-feedback{
+    
+    text-align: left;
+}
+
+.payment-title{
+    
+
+}
+
+#shipping-btn, #billing-btn{
+    float: right;
+}
+
+#visa-icon, #master-icon{
+    font-size: xx-large;
+}
