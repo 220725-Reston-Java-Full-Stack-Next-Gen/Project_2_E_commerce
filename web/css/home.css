@@ -1,0 +1,105 @@
+:root {
+    --text-primary: #95654f;
+    --text-secondary: #ececec;
+    --bg-primary: #fff3ea;
+    --bg-secondary: #fff3eacb;
+    --hover: #95654fc3;
+}
+
+body {
+    color: var(--text-primary);
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .01);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+}
+
+.banner {
+    height: 3vh;
+    width: 100%;
+    background: rgb(173, 150, 155);
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    height: 100%;
+    top: 5rem;
+}
+
+.wrapper>div:first-child {
+    margin-right: 15px;
+}
+
+.wrapper img {
+    display: block;
+    max-width: 100%;
+}
+
+#scroll-container {
+    overflow: hidden;
+}
+
+#scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
