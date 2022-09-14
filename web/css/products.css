@@ -32,27 +32,6 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    height: 100%;
-    top: 5rem;
-}
-
-.wrapper>div:first-child {
-    margin-right: 15px;
-}
-
-.wrapper img {
-    display: block;
-    max-width: 100%;
-}
-
 #scroll-container {
     overflow: hidden;
 }
