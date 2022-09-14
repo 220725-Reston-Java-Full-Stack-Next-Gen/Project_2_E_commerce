@@ -1,0 +1,46 @@
+body {
+    background-color: #fff3ea;
+}
+
+/* .navbar {
+    background-color: #95654f;
+} */
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+#mainInfoDiv {
+    margin-bottom: 1rem;
+}
+
+.button-width {
+    width: 150px;
+}
+
+#searchBar {
+    text-align: center !important;
+    font-size: 14px !important;
+    padding: 0.5rem !important;
+}
+
+#formHolder input {
+    text-align: center;
+}
+
+
+.product-holder-template {
+    background-color: #bab099 !important;
+
+}
+
+#accountPicture{
+    display: block;
+    margin:auto;
+    padding: auto;
+}
+
+.form-control::placeholder{
+    color:#95654f;
+    float: left;
+}
