@@ -1,0 +1,176 @@
+/* Navbar start */
+:root {
+    font-size: 16px;
+    font-family: 'Lato';
+    --text-primary: #95654f;
+    --text-secondary: #ececec;
+    --bg-primary: #fff3ea;
+    --bg-secondary: #fff3eacb;
+    --hover: #95654fc3;
+}
+
+body {
+    color: var(--text-primary);
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .01);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+}
+
+#logo {
+    height: 2.2rem;
+}
+
+.fa-primary {
+    height: 1rem;
+    width: 1.3rem;
+}
+
+#cart {
+    height: 1rem;
+    width: 1.5rem;
+}
+
+.navbar {
+    background-color: var(--bg-primary);
+    --bs-navbar-toggler-font-size: 1rem;
+    --bs-navbar-toggler-focus-width: 0.025rem;
+    --bs-navbar-toggler-border-color: var(--text-primary);
+}
+
+.navbar a {
+    color: var(--text-primary);
+}
+
+.btn-outline-success {
+    --bs-btn-color: var(--text-primary);
+    --bs-btn-border-color: var(--text-primary);
+    --bs-btn-hover-bg: var(--text-primary);
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-bg: var(--bg-primary);
+    --bs-btn-active-border-color: var(--text-primary);
+    --bs-btn-active-color: var(--text-primary);
+}
+
+.form-control {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.form-control:focus {
+    border-color: var(--text-primary);
+    box-shadow: none;
+    background-color: var(--bg-primary);
+}
+
+
+@media (min-width: 992px) {
+    .nav-text {
+        display: none;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .fa-primary {
+        display: none;
+    }
+
+}
+
+
+/* navbar end */
+
+
+
+
+.banner {
+    height: 3vh;
+    width: 100%;
+    background: rgb(173, 150, 155);
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    height: 100%;
+    top: 5rem;
+}
+
+.wrapper>div:first-child {
+    margin-right: 15px;
+}
+
+.wrapper img {
+    display: block;
+    max-width: 100%;
+}
+
+#scroll-container {
+    overflow: hidden;
+}
+
+#scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
