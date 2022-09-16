@@ -1,0 +1,124 @@
+body {
+    background-color: #fff3ea;
+    overflow-x:hidden;
+}
+
+/* .navbar {
+    background-color: #95654f;
+} */
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+#mainInfoDiv {
+    margin-bottom: 1rem;
+}
+
+.button-width {
+    width: 150px;
+}
+
+#searchBar {
+    text-align: center !important;
+    font-size: 14px !important;
+    padding: 0.5rem !important;
+}
+
+#formHolder input {
+    text-align: center;
+}
+  
+
+.product-holder-template {
+    transition: ease-in-out 0.3s;
+    background-color: #fff3ea !important;
+    border-radius: 3%;
+    box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07)
+        ;
+
+}
+
+.product-holder-template:hover {
+    background-color: #ce9f6b !important;
+}
+
+.product-image-holder {
+    width: 90% !important;
+}
+
+.product-name {
+    font-size: large !important;
+}
+.price-text {
+    font-weight: bold !important;
+    font-size: large !important;
+}
+
+.bold-text {
+    font-weight: bold !important;
+}
+
+.no-margin-text {
+    margin: 0;
+}
+
+.star-rating {
+    color: gold;
+}
+
+#scrollUpHolder {
+   width:50px;
+   position: fixed;
+   bottom: 50px;
+   right: 60px;
+}
+#scrollUpButton {
+    width: 100%;
+    font-size: 36px;
+    cursor: pointer;
+    color: white;
+    background-color: #304051;
+}
+
+#ordersHolder {
+    width: 80%;   
+}
+
+.order-product-image-holder {
+    width: 50%;
+}
+
+.pill-button {
+    border-radius: 28px !important;
+}
+
+.dashed-border {
+    border-style: dashed !important;
+}
+
+.salesCarousel {
+    
+}
+
+.cropped {
+    height: 250px;
+    object-fit: cover;
+    object-position: 25% 25%;
+    box-shadow:
+                0px 0px 0.5px rgba(0, 0, 0, -0.028),
+                0px 0px 1.3px rgba(0, 0, 0, -0.007),
+                0px 0px 2.4px rgba(0, 0, 0, 0.036),
+                0px 0px 4.2px rgba(0, 0, 0, 0.096),
+                0px 0px 7.9px rgba(0, 0, 0, 0.174),
+                0px 0px 19px rgba(0, 0, 0, 0.3)
+                ;
+
+
+}
