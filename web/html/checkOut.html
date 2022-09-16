@@ -8,6 +8,7 @@
     <title>CheckOut</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="/css/checkOut.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -164,7 +165,7 @@
             </div>
         </nav>
     </header>
-    <form class="needs-validation" action="orders.html" novalidate>
+    <form class="needs-validation" novalidate>
         <div class="container">
             <div class="card text-center mt-2" id="myModal">
                 <div class="card-header">
@@ -178,10 +179,10 @@
                                 name="billingTab" id="billingTab">Billing</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#order" class="nav-link " data-toggle="tab" data-target="#order">Order Summary</a>
+                            <a href="#order" class="nav-link " data-toggle="tab">Order Summary</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#payment" class="nav-link" data-toggle="tab" data-target="#payment">Payment</a>
+                            <a href="#payment" class="nav-link" data-toggle="tab">Payment</a>
                         </li>
                     </ul>
                 </div>
@@ -237,26 +238,40 @@
                                 <input type="text" class="form-control" placeholder="Apt, suite, etc (optional)">
                             </div>
                             <br>
+                            <div class="input-group input-group-md">
+                                <span class="input-group-text">City</span>
+                                <input type="text" class="form-control" placeholder="City" required>
+                                <div class="valid-feedback">
+                                    Valid input!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please provide a City.
+                                </div>
+                            </div>
+                            <br>
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group input-group-md">
-                                        <span class="input-group-text">City</span>
-                                        <input type="text" class="form-control" placeholder="City" required>
+                                        <span class="input-group-text">Country</span>
+                                        <select class="form-control" name="country" required>
+                                            <option value="" disabled selected hidden>Select Country</option>
+                                            <option value="US">United States</option>
+                                        </select>
                                         <div class="valid-feedback">
                                             Valid input!
                                         </div>
                                         <div class="invalid-feedback">
-                                            Please provide a City.
+                                            Please select a Country.
                                         </div>
                                     </div>
                                 </div>
-                                <br>
 
+                                <br>
                                 <div class="col">
                                     <div class="input-group input-group-md">
                                         <span class="input-group-text">State</span>
                                         <select class="form-control" name="state" required>
-                                            <option value="" disabled selected hidden>N/A</option>
+                                            <option value="" disabled selected hidden>Select State</option>
                                             <option value="AK">Alaska</option>
                                             <option value="AL">Alabama</option>
                                             <option value="AR">Arkansas</option>
@@ -351,8 +366,6 @@
                             <br>
                             <button class="nexttab  btn btn-outline-success" id="shipping-btn"
                                 type="button">Next</button>
-
-
                         </div>
 
 
@@ -405,21 +418,35 @@
                                 <input type="text" class="form-control" placeholder="Apt, suite, etc (optional)">
                             </div>
                             <br>
+                            <div class="input-group input-group-md">
+                                <span class="input-group-text">City</span>
+                                <input type="text" class="form-control" placeholder="City" required>
+                                <div class="valid-feedback">
+                                    Valid input!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please provide a City.
+                                </div>
+                            </div>
+                            <br>
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group input-group-md">
-                                        <span class="input-group-text">City</span>
-                                        <input type="text" class="form-control" placeholder="City" required>
+                                        <span class="input-group-text">Country</span>
+                                        <select class="form-control" name="country" required>
+                                            <option value="" disabled selected hidden>Select Country</option>
+                                            <option value="US">United States</option>
+                                        </select>
                                         <div class="valid-feedback">
                                             Valid input!
                                         </div>
                                         <div class="invalid-feedback">
-                                            Please provide a City.
+                                            Please select a Country.
                                         </div>
                                     </div>
                                 </div>
-                                <br>
 
+                                <br>
                                 <div class="col">
                                     <div class="input-group input-group-md">
                                         <span class="input-group-text">State</span>
@@ -518,6 +545,7 @@
                                 </label>
                             </div>
                             <br>
+
                             <button class="nexttab  btn btn-outline-success" id="billing-btn"
                                 type="button">Next</button>
                         </div>
@@ -537,7 +565,7 @@
                                 </div>
                             </div>
                             <br>
-                            <button type="button" class="nexttab btn btn-outline-success" id="order-btn">Next</button>
+                            <button class="nexttab btn btn-outline-success" id="order-btn" type="button">Next</button>
                         </div>
 
                         <div class="tab-pane fade" id="payment">
@@ -622,7 +650,7 @@
                                     </div>
                                 </div>
                             </div><br>
-                            <button type="submit" class="btn btn-outline-success"> Place Order</button>
+                            <a href="orders.html" class="btn btn-outline-success"> Place Order</a>
                         </div>
                     </div>
                 </div>
