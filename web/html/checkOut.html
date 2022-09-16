@@ -177,10 +177,10 @@
                                 name="billingTab" id="billingTab">Billing</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#order" class="nav-link " data-toggle="tab">Order Summary</a>
+                            <a href="#order" class="nav-link " data-toggle="tab" data-target="#order">Order Summary</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#payment" class="nav-link" data-toggle="tab">Payment</a>
+                            <a href="#payment" class="nav-link" data-toggle="tab" data-target="#payment">Payment</a>
                         </li>
                     </ul>
                 </div>
@@ -347,7 +347,7 @@
                                     pattern="[0-9]{3}-[0-9]{3} [0-9]{4}" maxlength="12">
                             </div>
                             <br>
-                            <button class="nexttab btn btn-outline-success" id="shipping-btn" onclick="bootStrapTabControl()">Next</button>
+                            <button  class="nexttab  btn btn-outline-success" id="shipping-btn" type="button">Next</button>
 
 
                         </div>
@@ -514,7 +514,7 @@
                                 </label>
                             </div>
                             <br>
-                            <button  class="nexttab  btn btn-outline-success" id="billing-btn">Next</button>
+                            <button  class="nexttab  btn btn-outline-success" id="billing-btn" type="button">Next</button>
                         </div>
                         <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="order-tab">
                             <div class="card-title">
@@ -529,7 +529,7 @@
                                 </div>
                             </div>
                             <br>
-                            <button class="nexttab btn btn-outline-success" id="Order-btn">Next</button>
+                            <button type="button" class="nexttab btn btn-outline-success" id="order-btn">Next</button>
                         </div>
 
                         <div class="tab-pane fade" id="payment">
