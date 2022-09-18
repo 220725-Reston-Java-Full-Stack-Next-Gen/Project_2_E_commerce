@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="user_id", nullable=false)
 	private int id;
 	@Column(name="user_name", nullable=false)
@@ -49,10 +51,12 @@ public class User {
 	private LocalDate dateCreated;
 	@Column(name="date_modified", nullable=false)
 	private LocalDate dateModified;
-	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private Set<Payment> payment;
 	
 	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
-			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified) {
+			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified,
+			Set<Payment> payment) {
 		super();
 		this.userName = userName;
 		this.firstName = firstName;
@@ -65,7 +69,10 @@ public class User {
 		this.userRole = userRole;
 		this.dateCreated = dateCreated;
 		this.dateModified = dateModified;
+		this.payment = payment;
 	}
+	
+	
 	
 	
 	
