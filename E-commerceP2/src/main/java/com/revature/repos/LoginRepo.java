@@ -1,2 +1,4 @@
-package com.revature.repos;public interface LoginRepo {
+package com.revature.repos;
+
+public interface LoginRepo {
 }
