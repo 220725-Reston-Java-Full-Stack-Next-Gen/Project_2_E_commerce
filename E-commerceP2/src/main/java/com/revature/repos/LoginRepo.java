@@ -11,6 +11,6 @@ import java.time.LocalDateTime;
 @Repository
 @Transactional
 public interface LoginRepo extends JpaRepository<LoginInfo, Integer> {
-    @Query(value = "UPDATE login_log SET logout_time = ?1 WHERE login_log_id = ?1")
+    @Query(value = "UPDATE login_log SET logout_time = ?1 WHERE login_log_id = ?2", nativeQuery = true)
     boolean updateLoginLog(LocalDateTime logoutTime, int login_log_id);
 }
