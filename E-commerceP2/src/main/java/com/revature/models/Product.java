@@ -33,11 +33,7 @@ public class Product {
     @Column(name = "product_rating")
     private String productRating;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_category_id", referencedColumnName = "product_category_id")
-    private product_cateogory_id product_cateogory_id ;
-
-
+   
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_brand_id", referencedColumnName = "product_brand_id")
     private product_brand_id product_brand_id ; 
