@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean logout(String authCookieToken) {
+	public boolean logout() {
 		// TODO Auto-generated method stub
 		return false;
 	}
