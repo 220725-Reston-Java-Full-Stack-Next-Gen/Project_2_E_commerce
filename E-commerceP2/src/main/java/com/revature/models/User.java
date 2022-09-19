@@ -70,6 +70,24 @@ public class User {
 		this.dateCreated = dateCreated;
 		this.dateModified = dateModified;
 		this.payment = payment;
+		
+	
+	}
+
+	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
+			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified) {
+		super();
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.city = city;
+		this.zipcode = zipcode;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.userRole = userRole;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
 	}
 	
 	
