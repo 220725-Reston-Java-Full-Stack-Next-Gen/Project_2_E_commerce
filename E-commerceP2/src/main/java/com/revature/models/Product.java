@@ -40,15 +40,15 @@ public class Product {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_brand_id", referencedColumnName = "product_brand_id")
-    private product_brand_id product_brand_id ; 
+    private product_brand_id product_brand_id;
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "type_id", referencedColumnName = "product_type_id")
-    private type_id product_type_id ; 
+    private type_id product_type_id;
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
-    private product_color_id product_color_id ; 
+    private product_color_id product_color_id;
     
     
 
