@@ -1,8 +1,5 @@
 package com.revature.utils;
 
-<<<<<<< HEAD
-public class ClientMessageUtil {
-=======
 import com.revature.models.utilitymodels.ClientMessage;
 
 public class ClientMessageUtil {
@@ -16,5 +13,5 @@ public class ClientMessageUtil {
 	public static final ClientMessage UPDATE_FAILED = new ClientMessage("Something went wrong while attempting to update the user.");
 	public static final ClientMessage DELETION_SUCCESSFUL = new ClientMessage("Success! User was deleted successfully.");
 	public static final ClientMessage DELETION_FAILED = new ClientMessage("Something went wrong while attempting to delete the user.");
->>>>>>> main
+	public static final ClientMessage NOT_AUTHENTICATED = new ClientMessage("Not Authenticated. Please Log in with your credentials.");
 }

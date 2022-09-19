@@ -19,6 +19,6 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public boolean updateLoginLog(LoginInfo loginInfo) {
-        return loginRepo.updateLoginLog(loginInfo);
+        return loginRepo.updateLoginLog(loginInfo.getLogoutTime(), loginInfo.getLoginLogID());
     }
 }
