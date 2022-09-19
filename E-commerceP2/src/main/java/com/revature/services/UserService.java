@@ -8,7 +8,7 @@ public interface UserService {
 	public boolean login(String username, String password);
 
 	// user logout
-	public boolean logout(String authCookieToken);
+	public boolean logout();
 
 	// user create/register
 	public boolean registerUser(User user);
