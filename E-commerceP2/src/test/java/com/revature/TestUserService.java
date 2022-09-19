@@ -8,7 +8,7 @@ import org.mockito.Mock;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
-
+import com.revature.repos.UserRepo;
 import com.revature.services.UserService;
 import com.revature.services.UserServiceImpl;
 
@@ -16,10 +16,10 @@ import com.revature.services.UserServiceImpl;
 public class TestUserService {
 
 	@InjectMocks
-	UserService userService;
+	UserService userService = new UserServiceImpl();
 
 	@Mock
-	UserServiceImpl userServImp;
+	UserRepo userRepo;
 
 	@BeforeAll
 	public void init() {
