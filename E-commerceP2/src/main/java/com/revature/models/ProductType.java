@@ -10,16 +10,16 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "product_brand")
-public class ProductBrand {
+@Table(name = "product_type")
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="product_brand_id",nullable=false)
-    private int productBrandId;
+    @Column(name="product_type_id",nullable=false)
+    private int productTypeId;
 
-    @Column(name = "product_brand", nullable = false)
-    private String productBrand;
+    @Column(name = "product_type", nullable = false)
+    private String productType;
 }
 
 
