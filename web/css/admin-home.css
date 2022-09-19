@@ -1,6 +1,10 @@
 body {
     background-color: #fff3ea;
     overflow-x:hidden;
+<<<<<<< HEAD
+=======
+    color: black !important;
+>>>>>>> main
 }
 
 /* .navbar {
@@ -28,7 +32,10 @@ body {
 #formHolder input {
     text-align: center;
 }
+<<<<<<< HEAD
   
+=======
+>>>>>>> main
 
 .product-holder-template {
     transition: ease-in-out 0.3s;
