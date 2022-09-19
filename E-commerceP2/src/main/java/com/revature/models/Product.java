@@ -34,11 +34,6 @@ public class Product {
     private int productRating;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_category_id", referencedColumnName = "product_category_id")
-    private ProductCategory productCategory ;
-
-
-    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_brand_id", referencedColumnName = "product_brand_id")
     private ProductBrand productBrand ; 
     
