@@ -41,7 +41,7 @@ public class Payment {
 	@Column(name="payment_date_last_updated",nullable=false)
 	private LocalDate paymentDateLastUpdated;
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="payment_user_id", referencedColumnName = "user_id")
 	private User user;
 	
 }
