@@ -18,9 +18,6 @@ public class ProductBrand {
     @Column(name="product_brand_id",nullable=false)
     private int productBrandId;
 
-    @Column(name = "product_id", nullable = false)
-    private int productId;
-
     @Column(name = "product_brand", nullable = false)
     private String productBrand;
 }
