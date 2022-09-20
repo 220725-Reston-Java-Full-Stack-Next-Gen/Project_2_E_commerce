@@ -1,8 +1,8 @@
 package com.revature.services;
 
-import com.revature.models.LoginInfo;
+import com.revature.models.LoginLog;
 
 public interface LoginService {
-    LoginInfo addLoginLog(LoginInfo loginInfo);
-    boolean updateLoginLog(LoginInfo loginInfo);
+    int addLoginLog(LoginLog loginLog);
+    boolean updateLoginLog(LoginLog loginLog);
 }

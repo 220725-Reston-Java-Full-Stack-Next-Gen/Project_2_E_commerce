@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import com.revature.exceptions.InvalidParameterException;
 import com.revature.exceptions.NotAuthenticatedException;
+import com.revature.exceptions.OrderNotFoundException;
 import com.revature.models.Order;
 import com.revature.models.OrderStatus;
 import com.revature.models.User;
@@ -31,7 +32,7 @@ public class OrderController {
 
 
     @PostMapping("/add")
-    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
+    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
     public @ResponseBody Order addOrder(@RequestBody Order order, HttpServletRequest request) {
         User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
@@ -49,6 +50,7 @@ public class OrderController {
         User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
         if (loggedInUser != null) {
+            List<Order> orders = orderService.getOrdersByOrderOwner(loggedInUser);
             return orderService.getOrdersByOrderOwner(loggedInUser);
         } else {
             throw new NotAuthenticatedException("Not Authenticated.");
@@ -58,7 +60,12 @@ public class OrderController {
 
     @GetMapping("/get-order")
     public @ResponseBody Order getOrderById(@RequestParam int id) {
-        return orderService.getOrderById(id);
+        Order order = orderService.getOrderById(id);
+        if (order != null) {
+            return order;
+        } else {
+            throw new OrderNotFoundException("No Orders were found with the provided info. Please try again.");
+        }
     }
 
     @GetMapping("get-orders-by-status")
@@ -68,7 +75,7 @@ public class OrderController {
         if (orderStatus != null) {
             return orderService.getOrdersByStatus(orderStatus);
         } else {
-            throw new InvalidParameterException("invalid parameter");
+            throw new InvalidParameterException("Invalid parameters provided. Please try again.");
         }
 
     }

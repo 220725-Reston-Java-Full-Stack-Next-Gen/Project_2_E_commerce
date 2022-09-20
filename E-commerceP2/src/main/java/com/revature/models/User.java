@@ -3,15 +3,7 @@ package com.revature.models;
 import java.time.LocalDate;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,7 +39,7 @@ public class User {
 	@Column(name="email", nullable=false)
 	private String email;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(name="user_role", nullable=false)
+	@JoinColumn(name="user_role_id", referencedColumnName = "user_role_id", nullable=false)
 	private UserRole userRole;
 	@Column(name="date_created", nullable=false)
 	private LocalDate dateCreated;
