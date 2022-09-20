@@ -43,8 +43,8 @@ public class Product {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
-    private ProductColor productColor ;
-
-
+    private ProductColor productColor ; 
+    
+    
 
 }
