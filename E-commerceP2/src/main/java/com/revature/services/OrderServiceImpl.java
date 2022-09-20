@@ -38,9 +38,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean updateOrder(Order order) {
-        return orderRepo.updateOrder(order.getOrderQuantity(), order.getOrderTotalPrice(), order.getDateShipped(), order.getDateModified(), order.getPayment().getId(), order.getOrderStatus().getOrderStatusID());
+        return orderRepo.updateOrder(order.getOrderQuantity(), order.getOrderTotalPrice(),
+                order.getDateShipped(), order.getDateModified(), order.getPayment().getId(),
+                order.getOrderStatus().getOrderStatusID());
     }
 
+    @Override
     public void deleteOrder(Order order) {
         orderRepo.delete(order);
     }

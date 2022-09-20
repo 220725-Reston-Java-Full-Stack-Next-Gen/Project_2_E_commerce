@@ -15,4 +15,5 @@ public interface OrderService {
 
     boolean updateOrder(Order order);
 
+    void deleteOrder(Order order);
 }

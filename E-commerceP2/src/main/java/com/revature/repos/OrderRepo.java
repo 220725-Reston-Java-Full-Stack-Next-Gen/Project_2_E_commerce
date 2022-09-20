@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-@Transactional
+@Transactional()
 public interface OrderRepo extends JpaRepository<Order, Integer> {
 
     @Query(value = "SELECT * FROM orders WHERE order_id = ?1", nativeQuery = true)
