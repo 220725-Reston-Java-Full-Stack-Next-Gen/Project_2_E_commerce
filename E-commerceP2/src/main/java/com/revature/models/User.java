@@ -30,6 +30,8 @@ public class User {
 	private int id;
 	@Column(name="user_name", nullable=false)
 	private String userName;
+	@Column(name="user_password", nullable=false)
+	private String password;
 	@Column(name="first_name", nullable=false)
 	private String firstName;
 	@Column(name="last_name", nullable=false)
@@ -54,11 +56,12 @@ public class User {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Payment> payment;
 	
-	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
-			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified,
-			Set<Payment> payment) {
+	public User(String userName, String password, String firstName, String lastName, String address, String city,
+			int zipcode, String phoneNumber, String email, UserRole userRole, LocalDate dateCreated,
+			LocalDate dateModified, Set<Payment> payment) {
 		super();
 		this.userName = userName;
+		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
@@ -70,25 +73,9 @@ public class User {
 		this.dateCreated = dateCreated;
 		this.dateModified = dateModified;
 		this.payment = payment;
-		
+	}
 	
-	}
-
-	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
-			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified) {
-		super();
-		this.userName = userName;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.zipcode = zipcode;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.userRole = userRole;
-		this.dateCreated = dateCreated;
-		this.dateModified = dateModified;
-	}
+	
 	
 	
 	
