@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -47,7 +48,7 @@ public class User {
 	@Column(name="email", nullable=false)
 	private String email;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(name="user_role", nullable=false)
+	@JoinColumn(name="user_role_id", referencedColumnName = "user_role_id")
 	private UserRole userRole;
 	@Column(name="date_created", nullable=false)
 	private LocalDate dateCreated;
