@@ -35,7 +35,7 @@ public class Product {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_brand_id", referencedColumnName = "product_brand_id")
-    private ProductBrand productBrand ;
+    private ProductBrand productBrand ; 
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "type_id", referencedColumnName = "product_type_id")
@@ -44,6 +44,7 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
     private ProductColor productColor ;
+
 
 
 }
