@@ -5,6 +5,7 @@ import static com.revature.utils.ClientMessageUtil.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.revature.exceptions.NotAuthenticatedException;
 import com.revature.models.LoginForm;
 import com.revature.models.LoginLog;
 import com.revature.models.UserRole;
@@ -31,13 +32,29 @@ public class UserController {
 	private LoginService loginService;
 
 	@PostMapping("/register")
-	public ClientMessage registerAccount(@RequestBody User user) {
+	public @ResponseBody ClientMessage registerAccount(@RequestBody User user) {
 		user.setDateCreated(LocalDate.now());
 		user.setUserRole(new UserRole(2, "user"));
 		System.out.println(user);
 		return userService.registerUser(user) ? USER_REGISTRATION_SUCCESSFUL : USER_REGISTRATION_FAILED;
 	}
 
+	@PutMapping("/update")
+	public @ResponseBody ClientMessage updateAccount(@RequestBody User user, HttpServletRequest request) {
+		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
+
+		if (loggedInUser != null) {
+			user.setDateModified(LocalDate.now());
+			if (userService.updateUser(user) > 0) {
+				request.getSession().setAttribute("loggedInUser", user);
+				return USER_UPDATE_SUCCESSFUL;
+			} else {
+				return USER_UPDATE_FAILED;
+			}
+		} else {
+			throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
+		}
+	}
 
 	@PostMapping("/login")
 	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")

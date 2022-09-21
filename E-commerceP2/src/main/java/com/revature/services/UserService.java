@@ -25,7 +25,7 @@ public interface UserService {
 	public List<User> getAllUsers();	
 	
 	// user update
-	public void updateUser(User user);
+	public int updateUser(User user);
 
 	// user delete
 	public void deleteUser(User user);
