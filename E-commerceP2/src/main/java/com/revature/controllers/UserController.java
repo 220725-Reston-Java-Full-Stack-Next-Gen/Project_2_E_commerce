@@ -84,7 +84,7 @@ public class UserController {
 				return LOGOUT_FAILED;
 			}
 		} else {
-			return LOGOUT_FAILED;
+			return NOT_AUTHENTICATED;
 		}
 	}
 	
