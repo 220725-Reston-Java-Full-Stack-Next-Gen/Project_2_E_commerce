@@ -30,7 +30,7 @@ public class User {
 	private String lastName;
 	@Column(name="street_address", nullable=false)
 	private String address;
-	@Column(name = "state", nullable = false)
+	@Column(name = "state", nullable = false, length = 2)
 	private String state;
 	@Column(name="city", nullable=false)
 	private String city;

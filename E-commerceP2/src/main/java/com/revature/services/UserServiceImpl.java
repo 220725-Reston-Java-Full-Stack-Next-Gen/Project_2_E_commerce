@@ -57,10 +57,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(User user) {
+	public int updateUser(User user) {
 		// TODO Auto-generated method stub
 		User u = userRepo.save(user);
-		userRepo.updateUser(u.getUserName(), u.getPassword(), u.getFirstName(), u.getLastName(), u.getAddress(), u.getCity(), u.getZipcode(), u.getPhoneNumber(), u.getEmail(), u.getDateModified());
+		return userRepo.updateUser(u.getUserName(), u.getPassword(), u.getFirstName(), u.getLastName(), u.getAddress(), u.getCity(), u.getZipcode(), u.getPhoneNumber(), u.getEmail(), u.getDateModified(), u.getId());
 	}
 
 	@Override
