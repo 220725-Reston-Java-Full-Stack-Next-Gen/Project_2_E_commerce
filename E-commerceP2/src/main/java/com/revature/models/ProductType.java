@@ -20,6 +20,10 @@ public class ProductType {
 
     @Column(name = "product_type", nullable = false)
     private String productType;
+
+    public ProductType(String productType) {
+        this.productType = productType;
+    }
 }
 
 

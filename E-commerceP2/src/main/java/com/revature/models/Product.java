@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -43,8 +42,16 @@ public class Product {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
-    private ProductColor productColor ; 
-    
-    
+    private ProductColor productColor ;
 
+    public Product(String productName, double productPrice, String image_Link, String productDescription, int productRating, ProductBrand productBrand, ProductType productType, ProductColor productColor) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.image_Link = image_Link;
+        this.productDescription = productDescription;
+        this.productRating = productRating;
+        this.productBrand = productBrand;
+        this.productType = productType;
+        this.productColor = productColor;
+    }
 }
