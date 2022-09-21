@@ -19,7 +19,7 @@ public class LoginLog {
     private int loginLogID;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
     private User user;
 
     @Column(name = "login_time", nullable = false)

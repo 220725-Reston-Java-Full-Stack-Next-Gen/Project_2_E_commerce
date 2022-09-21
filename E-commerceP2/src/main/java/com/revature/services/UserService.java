@@ -7,7 +7,7 @@ import com.revature.models.User;
 public interface UserService {
 
 	// user login
-	public boolean login(String username, String password);
+	public User login(String username, String password);
 
 	// user logout
 	public boolean logout();
