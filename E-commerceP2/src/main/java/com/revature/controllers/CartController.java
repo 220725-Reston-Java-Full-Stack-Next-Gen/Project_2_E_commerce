@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,11 @@ public class CartController {
 	//since this controller relies on the service layer, we need to inject this dependency into this class:
 	@Autowired
 	private CartService cartServ;
+	
+	@PostMapping("/create-cart")
+	public Cart createCart(@RequestParam Cart cart) {
+		return cartServ.createCart(cart);
+	}
 	
 	@GetMapping("/cart")
 	public List<Cart> getCart(@RequestParam User user){
