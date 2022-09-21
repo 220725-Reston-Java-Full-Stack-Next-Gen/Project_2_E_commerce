@@ -2156,3 +2156,36 @@
 2022-09-21 12:43:26 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.OrderDetailsServiceImpl : addOrderDetails ]
 2022-09-21 12:43:26 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.revature.models.OrderDetails.product -> com.revature.models.Product; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.revature.models.OrderDetails.product -> com.revature.models.Product
 2022-09-21 12:43:26 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.OrderDetailsController : addOrderDetailsList ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: null
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:51:38 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: No user with that username was found. Please try again.
+2022-09-21 13:51:38 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: null
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:52:41 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: No user with that username was found. Please try again.
+2022-09-21 13:52:41 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy156 : findbyUsername ]
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: null
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-21 13:53:59 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: No user with that username was found. Please try again.
+2022-09-21 13:53:59 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : loginUser ]

@@ -20,6 +20,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @RestController
+@CrossOrigin("http://127.0.0.1:5500")
 @RequestMapping("/users")
 public class UserController {
 
@@ -36,8 +37,10 @@ public class UserController {
 		System.out.println(user);
 		return userService.registerUser(user) ? USER_REGISTRATION_SUCCESSFUL : USER_REGISTRATION_FAILED;
 	}
-	
+
+
 	@PostMapping("/login")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
 	public @ResponseBody User loginUser(@RequestBody LoginForm loginForm, HttpServletRequest req) {
 
 		req.getSession().invalidate();
@@ -45,6 +48,7 @@ public class UserController {
 		String username = loginForm.getUserName();
 		String password = loginForm.getPassword();
 
+		System.out.println(username);
 		User loggedInUser = userService.login(username, password);
 
 		req.getSession().setAttribute("loggedInUser", loggedInUser);
