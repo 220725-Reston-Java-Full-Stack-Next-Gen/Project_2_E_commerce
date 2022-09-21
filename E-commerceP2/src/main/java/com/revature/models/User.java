@@ -3,15 +3,7 @@ package com.revature.models;
 import java.time.LocalDate;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,14 +20,18 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="user_id", nullable=false)
 	private int id;
-	@Column(name="user_name", nullable=false)
+	@Column(name="user_name", nullable=false, unique = true)
 	private String userName;
+	@Column(name="user_password", nullable=false)
+	private String password;
 	@Column(name="first_name", nullable=false)
 	private String firstName;
 	@Column(name="last_name", nullable=false)
 	private String lastName;
 	@Column(name="street_address", nullable=false)
 	private String address;
+	@Column(name = "state", nullable = false)
+	private String state;
 	@Column(name="city", nullable=false)
 	private String city;
 	@Column(name="zip_code", nullable=false)
@@ -44,21 +40,22 @@ public class User {
 	private String phoneNumber;
 	@Column(name="email", nullable=false)
 	private String email;
-	@ManyToOne(cascade = CascadeType.ALL)
-	@Column(name="user_role", nullable=false)
+	@ManyToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name="user_role_id", referencedColumnName = "user_role_id", nullable=false)
 	private UserRole userRole;
 	@Column(name="date_created", nullable=false)
 	private LocalDate dateCreated;
-	@Column(name="date_modified", nullable=false)
+	@Column(name="date_modified")
 	private LocalDate dateModified;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Payment> payment;
 	
-	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
-			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified,
-			Set<Payment> payment) {
+	public User(String userName, String password, String firstName, String lastName, String address, String city,
+			int zipcode, String phoneNumber, String email, UserRole userRole, LocalDate dateCreated,
+			LocalDate dateModified, Set<Payment> payment) {
 		super();
 		this.userName = userName;
+		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
@@ -70,25 +67,9 @@ public class User {
 		this.dateCreated = dateCreated;
 		this.dateModified = dateModified;
 		this.payment = payment;
-		
+	}
 	
-	}
-
-	public User(String userName, String firstName, String lastName, String address, String city, int zipcode,
-			String phoneNumber, String email, UserRole userRole, LocalDate dateCreated, LocalDate dateModified) {
-		super();
-		this.userName = userName;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.zipcode = zipcode;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.userRole = userRole;
-		this.dateCreated = dateCreated;
-		this.dateModified = dateModified;
-	}
+	
 	
 	
 	

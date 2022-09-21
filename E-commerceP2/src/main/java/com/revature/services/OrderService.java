@@ -13,6 +13,7 @@ public interface OrderService {
     List<Order> getOrdersByOrderOwner(User user);
     List<Order> getOrdersByStatus(OrderStatus status);
 
-    boolean updateOrder(Order order);
+    int updateOrder(Order order);
 
+    void deleteOrder(Order order);
 }
