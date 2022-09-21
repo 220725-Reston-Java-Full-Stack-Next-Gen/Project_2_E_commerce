@@ -87,6 +87,7 @@ public class UserController {
 		} else {
 			return LOGOUT_FAILED;
 		}
+
 	}
 	
 }

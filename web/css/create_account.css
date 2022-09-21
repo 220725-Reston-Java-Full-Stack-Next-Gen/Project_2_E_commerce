@@ -1,0 +1,21 @@
+
+
+.form-control::placeholder{
+    color:#95654f;
+}
+
+.card-header{
+    float:inherit;
+}
+
+.card-header{
+    text-align: center;
+}
+
+.btn {
+    float: right;
+}
+
+.card {
+    padding: 0;
+}
