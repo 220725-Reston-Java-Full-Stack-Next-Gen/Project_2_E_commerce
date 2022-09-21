@@ -28,7 +28,6 @@ public class UserController {
 		return userService.registerUser(user) ? REGISTATION_SUCCESSFUL : REGISTATION_FAILED;
 	}
 	
-	@PostMapping("/login")
 	public ClientMessage loginUser(HttpServletRequest req) {
 		
 		HttpSession session = req.getSession();
