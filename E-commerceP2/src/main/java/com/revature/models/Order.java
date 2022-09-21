@@ -31,19 +31,22 @@ public class Order {
     @Column(name = "date_shipped")
     private LocalDateTime dateShipped;
 
+    @Column(name = "date_delivered")
+    private LocalDateTime dateDelivered;
+
     @Column(name = "date_modified")
     private LocalDateTime dateModified;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_user_id", referencedColumnName = "user_id")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "order_user_id", referencedColumnName = "user_id", nullable = false)
     private User orderOwner;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_payment_id", referencedColumnName = "payment_id")
     private Payment payment;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_status_id", referencedColumnName = "order_status_id")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "order_status_id", referencedColumnName = "order_status_id", nullable = false)
     private OrderStatus orderStatus;
 
 }
