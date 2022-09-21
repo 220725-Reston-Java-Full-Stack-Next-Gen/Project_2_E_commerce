@@ -4,6 +4,7 @@ import com.revature.models.Order;
 import com.revature.models.OrderStatus;
 import com.revature.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +25,8 @@ public interface OrderRepo extends JpaRepository<Order, Integer> {
     @Query(value = "SELECT * FROM orders WHERE order_status_id = ?1", nativeQuery = true)
     List<Order> getOrdersByStatus(int statusID);
 
-    @Query(value = "UPDATE orders SET quantity = ?1, total_price = ?2, date_shipped = ?3, date_modified = ?4, order_payment_id = ?5, order_status_id = ?6", nativeQuery = true)
-    boolean updateOrder(int quantity, double totalPrice, LocalDateTime dateShipped, LocalDateTime dateModified, int paymentID, int statusID);
+    @Modifying
+    @Query(value = "UPDATE orders SET date_shipped = ?1, date_delivered = ?2, date_modified = ?3, order_status_id = ?4 WHERE order_id =?5", nativeQuery = true)
+    int updateOrder(LocalDateTime dateShipped, LocalDateTime dateDelivered, LocalDateTime dateModified, int statusID, int orderID);
 
 }

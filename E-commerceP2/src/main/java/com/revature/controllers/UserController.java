@@ -4,7 +4,6 @@ import static com.revature.utils.ClientMessageUtil.*;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import com.revature.models.LoginForm;
 import com.revature.models.LoginLog;
@@ -35,7 +34,7 @@ public class UserController {
 		user.setDateCreated(LocalDate.now());
 		user.setUserRole(new UserRole(2, "user"));
 		System.out.println(user);
-		return userService.registerUser(user) ? REGISTATION_SUCCESSFUL : REGISTATION_FAILED;
+		return userService.registerUser(user) ? USER_REGISTRATION_SUCCESSFUL : USER_REGISTRATION_FAILED;
 	}
 	
 	@PostMapping("/login")
