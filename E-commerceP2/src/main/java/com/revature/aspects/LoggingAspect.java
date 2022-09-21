@@ -26,7 +26,7 @@ public class LoggingAspect {
     }
 
     @Around(value = "execution(* com.revature.services.*.*(..))")
-    public Object logDuringService(ProceedingJoinPoint joinPoint) {
+    public Object logDuringService(ProceedingJoinPoint joinPoint) throws Throwable {
         // Get arguments returned from the dao layer call that came into the service layer
         Object[] args = joinPoint.getArgs();
 
@@ -41,6 +41,7 @@ public class LoggingAspect {
             LOGGER.info(String.format("Results of this method invoking/proceeding is: %s", result));
         } catch (Throwable e) {
             LOGGER.warn(String.format("Unable to execute around advice: %s", e.getMessage()));
+            throw e;
         }
 
         // end the advice by returning the found results from proceeding
@@ -49,7 +50,7 @@ public class LoggingAspect {
     }
 
     @Around(value = "execution(* com.revature.repos.*.*(..))")
-    public Object logDuringRepo(ProceedingJoinPoint joinPoint) {
+    public Object logDuringRepo(ProceedingJoinPoint joinPoint) throws Throwable {
         // get the arguments returned from the dao layer call that came into the service layer
         Object[] args = joinPoint.getArgs();
 
@@ -64,6 +65,7 @@ public class LoggingAspect {
             LOGGER.info(String.format("Results of this method invoking/proceeding is: %s", result));
         } catch (Throwable e) {
             LOGGER.warn(String.format("Unable to execute around advice: %s", e.getMessage()));
+            throw e;
         }
 
         // end advice by returning the found results from proceeding

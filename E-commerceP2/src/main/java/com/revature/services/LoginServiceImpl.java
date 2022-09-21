@@ -1,6 +1,6 @@
 package com.revature.services;
 
-import com.revature.models.LoginInfo;
+import com.revature.models.LoginLog;
 import com.revature.repos.LoginRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +13,12 @@ public class LoginServiceImpl implements LoginService {
 
 
     @Override
-    public LoginInfo addLoginLog(LoginInfo loginInfo) {
-        return loginRepo.save(loginInfo);
+    public int addLoginLog(LoginLog loginLog) {
+        return loginRepo.save(loginLog).getLoginLogID();
     }
 
     @Override
-    public boolean updateLoginLog(LoginInfo loginInfo) {
-        return loginRepo.updateLoginLog(loginInfo.getLogoutTime(), loginInfo.getLoginLogID());
+    public int updateLoginLog(LoginLog loginLog) {
+        return loginRepo.updateLoginLog(loginLog.getLogoutTime(), loginLog.getLoginLogID());
     }
 }
