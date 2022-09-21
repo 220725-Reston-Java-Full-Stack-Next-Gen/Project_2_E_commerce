@@ -12,14 +12,14 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "login_log")
-public class LoginInfo {
+public class LoginLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "login_log_id")
     private int loginLogID;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
     private User user;
 
     @Column(name = "login_time", nullable = false)
