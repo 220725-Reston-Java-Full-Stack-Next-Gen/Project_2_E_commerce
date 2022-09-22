@@ -13,6 +13,7 @@ body {
 
 #mainInfoDiv {
     margin-bottom: 1rem;
+    color: black !important;
 }
 
 .button-width {
