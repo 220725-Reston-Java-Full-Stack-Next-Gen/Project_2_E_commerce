@@ -32,21 +32,25 @@ public class ProductController {
 //    private ProductTypeService productTypeService;
 
     @GetMapping("/products")
-    public List<Product> getAllProducts(){
+    public @ResponseBody List<Product> getAllProducts(){
         return productService.getAllProducts();
     }
+
     @GetMapping("/products-by-brand")
     public List<Product> getProductsByBrand(@RequestParam String brand){
         return productService.getProductsByBrand(brand);
     }
+
     @GetMapping("/products-by-type")
     public List<Product> getProductsByType(@RequestParam String type){
         return productService.getProductsByType(type);
     }
+
     @GetMapping("/product-by-id")
     public Product getProductByID(@RequestParam int id){
         return productService.getProductById(id);
     }
+
     @DeleteMapping("/delete-product")
         public boolean deleteProductById(@RequestParam int id){
         return productService.deleteProductById(id);
@@ -66,6 +70,7 @@ public class ProductController {
                 imageLink, productDescription, productRating, productBrand,
                 productType, productColor, productId);
     }
+
     @PostMapping("add-product")
     public Product addProduct(@RequestBody Product product) {
 
