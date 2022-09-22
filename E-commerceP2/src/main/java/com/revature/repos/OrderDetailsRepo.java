@@ -19,7 +19,7 @@ public interface OrderDetailsRepo extends JpaRepository<OrderDetails, Integer> {
     @Query(value = "SELECT * FROM order_details WHERE order_id = ?1", nativeQuery = true)
     List<OrderDetails> getOrderDetailsByOrderId(int orderId);
 
-    @Query(value = "UPDATE order_details SET order_item_number = ?1, unit_price = ?2, product_quantity = ?3, date_modified = ?4, order_id = ?5, product_id = ?6", nativeQuery = true)
-    boolean updateOrderDetail(int orderItemNumber, double unitPrice, int quantity, LocalDateTime dateModified, int orderId, int productID);
+    @Query(value = "UPDATE order_details SET order_item_number = ?1, unit_price = ?2, product_quantity = ?3, date_modified = ?4, order_id = ?5, product_id = ?6 WHERE order_details_id = ?7", nativeQuery = true)
+    boolean updateOrderDetail(int orderItemNumber, double unitPrice, int quantity, LocalDateTime dateModified, int orderId, int productID, int orderDetailsID);
 
 }
