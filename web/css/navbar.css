@@ -1,5 +1,4 @@
 :root {
-    
     --text-primary: #95654f;
     --text-secondary: #ececec;
     --bg-primary: #fff3ea;
@@ -8,7 +7,7 @@
 }
 
 body {
-    /* color: var(--text-primary); */
+    color: var(--text-primary);
     background: #fafafa;
     margin: 0;
     padding: 0;
@@ -41,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
-    background-color: var(--bg-primary);
+    background: var(--bg-primary);
     --bs-navbar-toggler-font-size: 1rem;
     --bs-navbar-toggler-focus-width: 0.025rem;
     --bs-navbar-toggler-border-color: var(--text-primary);
@@ -51,15 +50,37 @@ body::-webkit-scrollbar-thumb {
     color: var(--text-primary);
 }
 
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
 .btn-outline-success {
-    --bs-btn-color: var(--text-primary);
-    --bs-btn-border-color: var(--text-primary);
-    --bs-btn-hover-bg: var(--text-primary);
-    --bs-btn-hover-border-color: none;
-    --bs-btn-focus-shadow-rgb: none;
-    --bs-btn-active-bg: var(--bg-primary);
-    --bs-btn-active-border-color: var(--text-primary);
-    --bs-btn-active-color: var(--text-primary);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+
+}
+
+.btn-outline-success:hover {
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.btn-outline-success:not(:disabled):not(.disabled):active {
+    background-color: #95654f;
+    border-color: #95654f;
+    box-shadow: 0 0 0 0.2rem #95654f71;
+}
+
+.btn-outline-success.focus,
+.btn-outline-success:focus {
+    box-shadow: none;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active:focus,
+.btn-outline-success:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #95654f71;
 }
 
 .form-control {
@@ -75,15 +96,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-@media (min-width: 992px){
-    .nav-text{
+@media (min-width: 992px) {
+    .nav-text {
         display: none;
     }
-    
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
 }
-@media (max-width: 992px){
-    .fa-primary{
+
+@media (max-width: 992px) {
+    .fa-primary {
         display: none;
     }
-    
+
 }

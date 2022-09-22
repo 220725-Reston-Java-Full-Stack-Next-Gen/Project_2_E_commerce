@@ -91,6 +91,7 @@ public class UserController {
 	}
 
 	@PutMapping("/logout")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
 	public @ResponseBody ClientMessage logoutUser(HttpServletRequest request) {
 		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 		System.out.println(loggedInUser);
