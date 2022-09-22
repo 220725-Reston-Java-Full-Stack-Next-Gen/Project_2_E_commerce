@@ -18,6 +18,10 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepo userRepo;
 	
+	public UserServiceImpl(UserRepo repo) {
+		this.userRepo = repo;
+	}
+	
 	@Override
 	public User login(String username, String password) {
 
@@ -64,10 +68,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteUser(User user) {
+	public boolean deleteUser(User user) {
 		// TODO Auto-generated method stub
-		User u = userRepo.save(user);
-		userRepo.delete(u);
+		 userRepo.delete(user);
+		 return true;
 	}
 
 	@Override
