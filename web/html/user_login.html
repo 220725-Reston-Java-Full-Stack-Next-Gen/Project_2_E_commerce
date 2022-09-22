@@ -9,16 +9,20 @@
         <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/footer.css">
 
-        <style>
-            .btn {
-                float: right;
-            }
-    
-            .card {
-                padding: 0;
-            }
-        </style>
-    </head>
+    <style>
+        .card {
+            padding: 0;
+        }
+
+        .card-header{
+            text-align: center;
+        }
+
+        .btn{
+            float: right;
+        }
+    </style>
+    </head> 
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light ">
@@ -134,8 +138,10 @@
                                     </div>
                                     
                                 </div>
+                                
                             </div>
-
+                            <br>
+                            <button id="submit" class="btn btn-outline-success">Login</button>
                         </div>
                     </div>
                 </div>
@@ -143,7 +149,7 @@
             <div id="errorMessageHolder">
                 <p id="errorTextMessage"></p>
             </div>
-            <button id="submit">Login</button>
+            
 
             <div>
                 <div id='footer' >
