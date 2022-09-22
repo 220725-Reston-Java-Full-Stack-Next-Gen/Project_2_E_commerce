@@ -1,0 +1,19 @@
+
+
+.form-control::placeholder{
+    color:#95654f;
+}
+
+
+
+.card-header{
+    text-align: center;
+}
+
+.btn {
+    float: right;
+}
+
+.card {
+    padding: 0;
+}
