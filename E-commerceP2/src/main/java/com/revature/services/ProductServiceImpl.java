@@ -62,4 +62,9 @@ public class ProductServiceImpl implements ProductService {
                 image_Link, productDescription, productRating, productBrand,
                 productType, productColor);
     }
+
+    @Override
+    public Product addProduct(Product product) {
+        return productRepo.save(product);
+    }
 }
