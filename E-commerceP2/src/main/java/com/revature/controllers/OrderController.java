@@ -6,17 +6,20 @@ import com.revature.exceptions.NotAuthorizedException;
 import com.revature.exceptions.OrderNotFoundException;
 import com.revature.models.Order;
 import com.revature.models.OrderStatus;
+import com.revature.models.Payment;
 import com.revature.models.User;
 import com.revature.models.utilitymodels.ClientMessage;
 import com.revature.services.OrderDetailsService;
 import com.revature.services.OrderService;
 import com.revature.services.OrderStatusService;
+import com.revature.services.PaymentService;
 import com.revature.utils.ClientMessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +35,8 @@ public class OrderController {
     private OrderStatusService orderStatusService;
     @Autowired
     private OrderDetailsService orderDetailsService;
+    
+    private PaymentService paymentService;
 
 
     @PostMapping("/add")
@@ -165,5 +170,22 @@ public class OrderController {
             return ClientMessageUtil.USER_DELETION_FAILED;
         }
     }
+    
+    @PostMapping("/payment/add")
+    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
+    public @ResponseBody ClientMessage addPayment(@RequestBody Payment payment, HttpServletRequest request) {
+        User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
+        if (loggedInUser != null) {
+            payment.setPaymentDateCreated(LocalDate.now());
+            payment.setUser(loggedInUser);
+            payment.setPaymentStatus("pending");
+            System.out.println(payment);
+            return paymentService.addPayment(payment) ? ClientMessageUtil.PAYMENT_SUCCESSFUL : ClientMessageUtil.PAYMENT_FAILED;
+        } else {
+            throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
+        }
+    }
+    
+    
 }

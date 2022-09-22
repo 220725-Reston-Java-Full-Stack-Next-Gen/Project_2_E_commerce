@@ -1,5 +1,7 @@
 package com.revature.repos;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -15,6 +17,7 @@ public interface CartRepo extends JpaRepository<Cart, Integer> {
 	
 	@Query(value = "SELECT * FROM cart WHERE userID = ?1", nativeQuery = true)
 	public List<Cart> getCart(int userID);
+
 	
 	@Query(value = "INSERT INTO cart SELECT product_id=?1 FROM product", nativeQuery = true)
 	boolean save(int productID);

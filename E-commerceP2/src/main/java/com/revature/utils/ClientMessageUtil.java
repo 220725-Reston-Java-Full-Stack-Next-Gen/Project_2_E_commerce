@@ -16,4 +16,6 @@ public class ClientMessageUtil {
 	public static final ClientMessage ORDER_UPDATE_FAILED = new ClientMessage("Something went wrong while attempting to update the order.");
 	public static final ClientMessage ORDER_UPDATE_SUCCESSFUL = new ClientMessage("Success! Order update was successful.");
 	public static final ClientMessage NOT_AUTHENTICATED = new ClientMessage("Not Authenticated. Please Log in with your credentials.");
+	public static final ClientMessage PAYMENT_SUCCESSFUL = new ClientMessage("Success! Your payment was successfull.");
+	public static final ClientMessage PAYMENT_FAILED = new ClientMessage("Something went wrong during payment.");
 }
