@@ -25,8 +25,8 @@ allHolderDiv.innerHTML = loader;
 //         return false;
 //     }) 
 // }
-async function getBlushProducts() {
-    const getProducts = await fetch(`http://localhost:8080/api/products/products-by-type?type=blush`,{
+async function getBronzerProducts() {
+    const getProducts = await fetch(`http://localhost:8080/api/products/products-by-type?type=bronzer`,{
         method: "GET",
         mode: 'cors',
         headers: {
@@ -152,7 +152,7 @@ async function getBlushProducts() {
     })
 }
 
-getBlushProducts();
+getBronzerProducts();
 
 async function addToCartFunctionality(product) {
     console.log(`CART ${product.productPrice}`);

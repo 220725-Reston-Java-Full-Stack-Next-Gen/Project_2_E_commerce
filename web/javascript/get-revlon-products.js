@@ -50,12 +50,18 @@ async function getRevlonProducts() {
         //var singleRowProducts = document.getElementsByClassName("single-row-products");
         let count = 0;
         let singleRowProductsHolder = document.createElement("div");
-        singleRowProductsHolder.classList.add("row", "w-60", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none");
-        count = 0;
+        singleRowProductsHolder.classList.add("row", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none");
+        count = response.length;
+
         for (const product of response) {
-            count ++;
+            
             let newProductHolderDiv = document.createElement("div");
-            newProductHolderDiv.classList.add("col-md-2", "col-12", "bg-light", "m-3", "p-3", "product-holder-template");
+            if (count > 3) {
+                newProductHolderDiv.classList.add("col-md-2", "col-12", "bg-light", "m-3", "p-3", "product-holder-template");
+            } else {
+                newProductHolderDiv.classList.add("col-md-4", "col-12", "bg-light", "m-3", "p-3", "product-holder-template");
+            }
+            
             
             let imageHolderDiv = document.createElement("div");
             let imageLink = document.createElement("a");
@@ -95,34 +101,43 @@ async function getRevlonProducts() {
             productNameH5.classList.add("text-center", "price-text");
             productNameH5.innerHTML = `$${product.productPrice.toFixed(2)}`;
 
+            let productColorP = document.createElement("p");
+            productColorP.classList.add("text-center", "product-color");
+            productColorP.innerHTML = `Color: ${product.productColor.colorName}`;
+
+            //let productColorBox = document.createElement(`<div class="color-box"></div>`);
+            let productColorBox = document.createElement("div");
+            let productColor = document.createElement("div");
+            productColorBox.classList.add("d-flex", "justify-content-center", "align-self-center");
+            productColor.classList.add("color-box", "d-flex", "justify-content-center", "align-self-center");
+
+            productColor.style.backgroundColor = `${product.productColor.colorHexValue}`;
+            productColorBox.append(productColor);
+
+
             let productHR = document.createElement("hr");
+            productHR.classList.add("my-2");
+            let productHR2 = document.createElement("hr");
             productHR.classList.add("m-0");
 
             let buttonHolderDiv = document.createElement("div");
             buttonHolderDiv.classList.add("row", "justify-content-center", "mt-4");
             let addToCartbutton = document.createElement("button");
             addToCartbutton.innerHTML = "Add To Cart"
-            addToCartbutton.classList.add("btn", "btn-secondary", "mb-2", "px-5");
+            addToCartbutton.classList.add("btn", "btn-secondary", "mb-2", "px-4");
 
             addToCartbutton.addEventListener('click', async() => {
                 addToCartFunctionality(product);
             });
             buttonHolderDiv.append(addToCartbutton);
 
-            newProductHolderDiv.append(imageHolderDiv, starsHolderDiv, productNameH4, productNameH5, productHR, buttonHolderDiv);
-
+            newProductHolderDiv.append(imageHolderDiv, starsHolderDiv, productNameH4, productNameH5, productHR, productColorBox, productColorP, productHR2, buttonHolderDiv);
             singleRowProductsHolder.append(newProductHolderDiv);
 
-            if (singleRowProductsHolder.childElementCount == 4) {
-                // rowHolderDiv.append(singleRowProducts);
-                
-                singleRowProductsHolder.setAttribute("style", "display: flex !important");
-                allHolderDiv.append(singleRowProductsHolder);
-
-                singleRowProductsHolder = document.createElement("div");
-                singleRowProductsHolder.classList.add("row", "w-60", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none");
-                
-            }
+            singleRowProductsHolder.classList.add("row", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none")
+            
+            allHolderDiv.append(singleRowProductsHolder);
+            singleRowProductsHolder.setAttribute("style", "display: flex !important");
         }
         
         //allHolderDiv.append(singleRowProductsHolder);

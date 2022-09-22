@@ -25,8 +25,8 @@ allHolderDiv.innerHTML = loader;
 //         return false;
 //     }) 
 // }
-async function getBlushProducts() {
-    const getProducts = await fetch(`http://localhost:8080/api/products/products-by-type?type=blush`,{
+async function getLipstickProducts() {
+    const getProducts = await fetch(`http://localhost:8080/api/products/products-by-type?type=lipstick`,{
         method: "GET",
         mode: 'cors',
         headers: {
@@ -152,7 +152,7 @@ async function getBlushProducts() {
     })
 }
 
-getBlushProducts();
+getLipstickProducts();
 
 async function addToCartFunctionality(product) {
     console.log(`CART ${product.productPrice}`);

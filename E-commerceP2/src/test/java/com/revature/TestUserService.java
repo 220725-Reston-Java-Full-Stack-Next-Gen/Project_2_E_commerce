@@ -50,7 +50,7 @@ public class TestUserService {
 		//Mock depending class
 		userMockRepo = Mockito.mock(UserRepo.class);
 		//inject service with mocked class
-		userServ = new UserServiceImpl(userMockRepo);
+		//userServ = new UserServiceImpl(userMockRepo);
 		
 		/*Dummy DB setup*/
 		//we need to create a "fake database" of user objects
