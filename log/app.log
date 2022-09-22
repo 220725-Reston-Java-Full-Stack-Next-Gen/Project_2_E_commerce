@@ -1,0 +1,140 @@
+2022-09-20 16:17:12 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.OrderController : getOrdersByOwner ]
+2022-09-20 16:17:12 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.OrderController : getOrdersByOwner ]
+2022-09-20 16:56:45 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-20 16:56:47 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-20 17:00:44 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-20 17:00:46 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-21 11:02:17 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:02:17 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:02:17 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:02:17 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:02:17 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:02:18 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:02:18 WARN  revature.aspects.LoggingAspect:67 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.firstName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.firstName
+2022-09-21 11:02:18 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:02:18 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.firstName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.firstName
+2022-09-21 11:02:18 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:03:19 WARN  revature.aspects.LoggingAspect:67 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:03:19 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 11:03:19 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:10:23 WARN  revature.aspects.LoggingAspect:67 - Unable to execute around advice: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:10:23 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2022-09-21 11:10:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:14:00 WARN  revature.aspects.LoggingAspect:67 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:14:00 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 11:14:00 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=7, userName=jo2, password=12345, firstName=joeTest, lastName=test, address=123Test, state=testing, city=tested, zipcode=0, phoneNumber=7088933456, email=j02@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 11:15:13 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 11:15:14 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=8, userName=jo2, password=12345, firstName=joeTest, lastName=test, address=123Test, state=testing, city=tested, zipcode=456789, phoneNumber=7088933456, email=j02@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 11:18:10 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy5.$Proxy193 : save ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=9, userName=jtest3, password=12345, firstName=jTestF, lastName=jTestL, address=123Test, state=testing, city=tested, zipcode=456789, phoneNumber=1233454546, email=jtest3@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 11:21:53 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 11:21:54 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:14:33 WARN  revature.aspects.LoggingAspect:67 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:14:33 WARN  revature.aspects.LoggingAspect:43 - Unable to execute around advice: not-null property references a null or transient value : com.revature.models.User.userName; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.revature.models.User.userName
+2022-09-21 16:14:33 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy9.$Proxy234 : save ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=12, userName=feTest, password=12345, firstName=Front, lastName=End, address=124frontend st, state=AK, city=frontend ville, zipcode=12345, phoneNumber=7081234545, email=fe@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 16:18:06 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=13, userName=j, password=12345, firstName=j, lastName=r, address=123.norm, state=IL, city=test, zipcode=60245, phoneNumber=1234567890, email=jr@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 16:29:23 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=14, userName=bobBuilder, password=12345, firstName=bob, lastName=builder, address=bob s ave, state=AL, city=bobville, zipcode=23232, phoneNumber=1234567890, email=bobbuilder@rev.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 16:34:03 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.controllers.UserController : registerAccount ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:34 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:58 - Around advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:20 - Before advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ jdk.proxy4.$Proxy155 : save ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:65 - Results of this method invoking/proceeding is: User(id=15, userName=tst4, password=12345, firstName=test4, lastName=test4l, address=123Something Ave, state=CT, city=somethingVille, zipcode=23434, phoneNumber=1234567890, email=test4@email.com, userRole=UserRole(id=2, role=user), dateCreated=2022-09-21, dateModified=null, payment=null)
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:72 - End of Around Advice
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:41 - Results of this method invoking/proceeding is: true
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:48 - End of Around Advice
+2022-09-21 16:38:35 INFO  revature.aspects.LoggingAspect:25 - After advice for: [ com.revature.controllers.UserController : registerAccount ]

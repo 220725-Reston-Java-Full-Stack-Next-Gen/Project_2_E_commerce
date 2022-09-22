@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.User;
-import com.revature.models.UserRole;
+
 
 @Repository
 @Transactional

@@ -60,21 +60,19 @@ public class TestUserService {
 		dummyDB = new ArrayList<User>();
 		dummyDB.add(u1);
 		dummyDB.add(u2);
-		
-		System.out.println(dummyDB);
 	}
 	
 	@Test
 	@Order(1)
 	@DisplayName("1. Mock Validation Sanity Test")
-	void checkMockInjection() {
+	public void checkMockInjection() {
 		assertThat(userMockRepo).isNotNull();
 		assertThat(userServ).isNotNull();
 	}
 	
 	@Test
 	@Order(2)
-	@DisplayName("2. Register new User Test")
+	@DisplayName("2. RegisterNewUser Test")
 	public void registerUserTest() throws UserNotFoundException, SQLException{
 		//Arrange step
 		User u3 = new User("t3","12345", "test4", "three", "test3Ave", "test3St", "test3Ct", 64334, "1234564344","test3@email.com", new UserRole(2,"user"), LocalDate.now(), LocalDate.now());
@@ -90,7 +88,7 @@ public class TestUserService {
 	
 	@Test
 	@Order(3)
-	@DisplayName("3. login User Test")
+	@DisplayName("3. loginUser Test")
 	public void loginUserTest() {
 		
 		//Expected Mock behavior
@@ -103,14 +101,7 @@ public class TestUserService {
 
 	@Test
 	@Order(4)
-	@DisplayName("2.logOut User Test")
-	public void logoutUserTest() {
-		
-	}
-	
-	@Test
-	@Order(5)
-	@DisplayName("2. getUserByUserName Test")
+	@DisplayName("4. getUserByUserName Test")
 	public void getUserByUserNameTest() {
 		when(userServ.getUserByUsername("t1")).thenReturn(u1);
 		
@@ -118,22 +109,21 @@ public class TestUserService {
 	}
 	
 	@Test
-	@Order(6)
-	@DisplayName("2. update User Test")
+	@Order(5)
+	@DisplayName("5. updateUser Test")
 	public void updateUserTest() {
 		u2.setUserName("updtest2");
 		u2.setPassword("54321");;
 		
-		when(userMockRepo.save(u2)).thenReturn(u2);
-		when(userServ.getUserById(2)).thenReturn(u2);
+		when(userServ.updateUser(u2)).thenReturn(1);
 		
 		
-		assertEquals(true, userServ.updateUser(u2));
+		assertEquals(1, userServ.updateUser(u2));
 	}
 	
 	@Test
-	@Order(7)
-	@DisplayName("7. delete User Test")
+	@Order(6)
+	@DisplayName("6. deleteUser Test")
 	public void deleteUserTest() {
 		doNothing().when(userMockRepo).delete(u2);
 		//act + assert step

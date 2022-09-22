@@ -7,7 +7,6 @@ import com.revature.repos.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -15,6 +14,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderRepo orderRepo;
+    
+    public OrderServiceImpl(OrderRepo orderRepo) {
+    	this.orderRepo = orderRepo;
+    }
 
     @Override
     public Order addOrder(Order order) {
