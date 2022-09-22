@@ -40,12 +40,16 @@ public class UserController {
 	}
 
 	@PutMapping("/update")
+	@CrossOrigin(origins = "http://127.0.0.1:5500", allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
 	public @ResponseBody ClientMessage updateAccount(@RequestBody User user, HttpServletRequest request) {
 		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
 		if (loggedInUser != null) {
+
 			user.setDateModified(LocalDate.now());
+			System.out.println(user);
 			if (userService.updateUser(user) > 0) {
+
 				request.getSession().setAttribute("loggedInUser", user);
 				return USER_UPDATE_SUCCESSFUL;
 			} else {

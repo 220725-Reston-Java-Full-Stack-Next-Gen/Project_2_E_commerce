@@ -59,8 +59,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int updateUser(User user) {
 		// TODO Auto-generated method stub
-		User u = userRepo.save(user);
-		return userRepo.updateUser(u.getUserName(), u.getPassword(), u.getFirstName(), u.getLastName(), u.getAddress(), u.getCity(), u.getZipcode(), u.getPhoneNumber(), u.getEmail(), u.getDateModified(), u.getId());
+		//User user = userRepo.save(user);
+		return userRepo.updateUser(user.getUserName(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getAddress(), user.getCity(), user.getState(), user.getZipcode(), user.getPhoneNumber(), user.getEmail(), user.getDateModified(), user.getId());
 	}
 
 	@Override
