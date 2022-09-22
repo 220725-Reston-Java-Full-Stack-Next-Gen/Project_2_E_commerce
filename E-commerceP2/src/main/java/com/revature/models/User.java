@@ -30,7 +30,7 @@ public class User {
 	private String lastName;
 	@Column(name="street_address", nullable=false)
 	private String address;
-	@Column(name = "state", nullable = false)
+	@Column(name = "state", nullable = false, length = 2)
 	private String state;
 	@Column(name="city", nullable=false)
 	private String city;
@@ -50,15 +50,17 @@ public class User {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Payment> payment;
 	
-	public User(String userName, String password, String firstName, String lastName, String address, String city,
-			int zipcode, String phoneNumber, String email, UserRole userRole, LocalDate dateCreated,
-			LocalDate dateModified, Set<Payment> payment) {
+
+	public User(String userName, String password, String firstName, String lastName, String address, String state,
+			String city, int zipcode, String phoneNumber, String email, UserRole userRole, LocalDate dateCreated,
+			LocalDate dateModified) {
 		super();
 		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
+		this.state = state;
 		this.city = city;
 		this.zipcode = zipcode;
 		this.phoneNumber = phoneNumber;
@@ -66,8 +68,32 @@ public class User {
 		this.userRole = userRole;
 		this.dateCreated = dateCreated;
 		this.dateModified = dateModified;
-		this.payment = payment;
 	}
+
+
+	public User(int id, String userName, String password, String firstName, String lastName, String address,
+			String state, String city, int zipcode, String phoneNumber, String email, UserRole userRole,
+			LocalDate dateCreated, LocalDate dateModified) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.state = state;
+		this.city = city;
+		this.zipcode = zipcode;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.userRole = userRole;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
+	}
+	
+	
+	
+	
 	
 	
 	

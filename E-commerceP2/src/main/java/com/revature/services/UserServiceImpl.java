@@ -18,6 +18,10 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepo userRepo;
 	
+	public UserServiceImpl(UserRepo repo) {
+		this.userRepo = repo;
+	}
+	
 	@Override
 	public User login(String username, String password) {
 
@@ -57,17 +61,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(User user) {
+	public int updateUser(User user) {
 		// TODO Auto-generated method stub
-		User u = userRepo.save(user);
-		userRepo.updateUser(u.getUserName(), u.getPassword(), u.getFirstName(), u.getLastName(), u.getAddress(), u.getCity(), u.getZipcode(), u.getPhoneNumber(), u.getEmail(), u.getDateModified());
+		//User user = userRepo.save(user);
+		return userRepo.updateUser(user.getUserName(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getAddress(), user.getCity(), user.getState(), user.getZipcode(), user.getPhoneNumber(), user.getEmail(), user.getDateModified(), user.getId());
 	}
 
 	@Override
-	public void deleteUser(User user) {
+	public boolean deleteUser(User user) {
 		// TODO Auto-generated method stub
-		User u = userRepo.save(user);
-		userRepo.delete(u);
+		 userRepo.delete(user);
+		 return true;
 	}
 
 	@Override
