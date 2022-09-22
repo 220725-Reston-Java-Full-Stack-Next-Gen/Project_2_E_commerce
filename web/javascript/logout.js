@@ -12,11 +12,18 @@ logout.addEventListener("click", async()=> {
         
     }).then((response) => {
         console.log(response);
-        sessionStorage.removeItem("loggedInUser", JSON.stringify(response));
-
+        sessionStorage.removeItem("loggedInUser");
         window.location = "./login.html";
         
-    }).catch((error) =>{
+    }).then((response) => {
+    if(!response.ok){
+        throw new Error(response.status)
+    }
+    else{
+        return response.json()
+    }
+    
+}).catch((error) =>{
 
 
         const errorTextMessage = document.getElementById("errorTextMessage");
