@@ -64,10 +64,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteUser(User user) {
+	public boolean deleteUser(User user) {
 		// TODO Auto-generated method stub
-		User u = userRepo.save(user);
-		userRepo.delete(u);
+		 userRepo.delete(user);
+		 return true;
 	}
 
 	@Override
