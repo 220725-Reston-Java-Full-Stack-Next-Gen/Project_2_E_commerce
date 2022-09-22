@@ -24,9 +24,10 @@ public class ProductColor {
     
     @Column(name = "color_name", nullable = false)
     private String colorName;
-    
-    
-    
-    
 
+
+    public ProductColor(String colorHexValue, String colorName) {
+        this.colorHexValue = colorHexValue;
+        this.colorName = colorName;
+    }
 }
