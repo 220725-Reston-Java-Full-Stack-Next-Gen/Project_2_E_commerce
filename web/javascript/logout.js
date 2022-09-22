@@ -2,7 +2,7 @@ var loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
 var logout=document.getElementById("logout")
 logout.addEventListener("click", async()=> {
     
-    const logout =await fetch(`localhost:8080/users/logout`,{
+    const logout =await fetch(`http://localhost:8080/users/logout`,{
 
         method: "PUT",
         headers: {
