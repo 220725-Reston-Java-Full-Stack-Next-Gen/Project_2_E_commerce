@@ -18,8 +18,12 @@ public class ProductType {
     @Column(name="product_type_id",nullable=false)
     private int productTypeId;
 
-    @Column(name = "product_type", nullable = false)
+    @Column(name = "product_type", nullable = false, unique = true)
     private String productType;
+
+    public ProductType(String productType) {
+        this.productType = productType;
+    }
 }
 
 

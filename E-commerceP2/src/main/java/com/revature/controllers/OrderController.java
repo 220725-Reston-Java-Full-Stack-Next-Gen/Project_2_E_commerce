@@ -98,6 +98,7 @@ public class OrderController {
 
 
     @GetMapping("/get-order")
+    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
     public @ResponseBody Order getOrderById(@RequestParam int id) {
         Order order = orderService.getOrderById(id);
         if (order != null) {

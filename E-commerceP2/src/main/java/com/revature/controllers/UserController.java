@@ -5,10 +5,7 @@ import static com.revature.utils.ClientMessageUtil.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-
 import com.revature.exceptions.NotAuthenticatedException;
-import com.revature.exceptions.NotAuthorizedException;
-import com.revature.exceptions.UserNotFoundException;
 import com.revature.models.LoginForm;
 import com.revature.models.LoginLog;
 import com.revature.models.UserRole;
@@ -22,7 +19,6 @@ import com.revature.services.UserService;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 @CrossOrigin("http://127.0.0.1:5500")
@@ -95,6 +91,7 @@ public class UserController {
 	}
 
 	@PutMapping("/logout")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
 	public @ResponseBody ClientMessage logoutUser(HttpServletRequest request) {
 		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 		System.out.println(loggedInUser);
@@ -116,49 +113,5 @@ public class UserController {
 			return NOT_AUTHENTICATED;
 		}
 	}
-	
-	 	@GetMapping("/admin/get-by-id")
-	    public @ResponseBody User getUserById(@RequestParam int id) {
-	        User user = userService.getUserById(id);
-	        if (user != null) {
-	            return user;
-	        } else {
-	            throw new UserNotFoundException("No Users were found with the provided info. Please try again.");
-	        }
-	    }
-	 	
-	 	@GetMapping("/admin/get-all-users")
-	    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-	    public @ResponseBody List<User> getAllUsers(HttpServletRequest request) {
-	        User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
-	        if (loggedInUser != null) {
-	            if (loggedInUser.getUserRole().getRole().equalsIgnoreCase("admin")) {
-	                 return userService.getAllUsers();
-
-	            } else {
-	                throw new NotAuthorizedException("Insufficient privileges to access this resource.");
-	            }
-
-	        } else {
-	            throw new NotAuthenticatedException("Not Authenticated. Please Log in with your credentials.");
-	        }
-
-	    }
-	 	
-	 	@DeleteMapping("/delete-user")
-        public @ResponseBody ClientMessage deleteUser(@RequestParam User user, HttpServletRequest request){
-	 		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
-	        if (loggedInUser != null) {
-	           
-	                 boolean isDeleted = userService.deleteUser(user);
-	                 if(isDeleted == true) {
-	                	 return USER_DELETION_SUCCESSFUL;
-	                 }else {
-	                	 return USER_DELETION_FAILED;
-	                 }
-	        } else {
-	            throw new NotAuthenticatedException("Not Authenticated. Please Log in with your credentials.");
-	        }
-    }
 	
 }
