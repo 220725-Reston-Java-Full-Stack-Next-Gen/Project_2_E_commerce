@@ -33,7 +33,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
         return orderDetailsRepo.updateOrderDetail(orderDetails.getOrderItemNumber(),
                 orderDetails.getUnitPrice(), orderDetails.getProductQuantity(),
                 orderDetails.getDateModified(), orderDetails.getOrder().getOrderID(),
-                orderDetails.getProduct().getProductID());
+                orderDetails.getProduct().getProductID(), orderDetails.getOrderDetailsID());
     }
 
     @Override

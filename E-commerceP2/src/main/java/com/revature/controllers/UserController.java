@@ -5,6 +5,7 @@ import static com.revature.utils.ClientMessageUtil.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.revature.exceptions.NotAuthenticatedException;
 import com.revature.models.LoginForm;
 import com.revature.models.LoginLog;
 import com.revature.models.UserRole;
@@ -20,6 +21,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @RestController
+@CrossOrigin("http://127.0.0.1:5500")
 @RequestMapping("/users")
 public class UserController {
 
@@ -30,14 +32,36 @@ public class UserController {
 	private LoginService loginService;
 
 	@PostMapping("/register")
-	public ClientMessage registerAccount(@RequestBody User user) {
+	public @ResponseBody ClientMessage registerAccount(@RequestBody User user) {
 		user.setDateCreated(LocalDate.now());
 		user.setUserRole(new UserRole(2, "user"));
 		System.out.println(user);
 		return userService.registerUser(user) ? USER_REGISTRATION_SUCCESSFUL : USER_REGISTRATION_FAILED;
 	}
-	
+
+	@PutMapping("/update")
+	@CrossOrigin(origins = "http://127.0.0.1:5500", allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
+	public @ResponseBody ClientMessage updateAccount(@RequestBody User user, HttpServletRequest request) {
+		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
+
+		if (loggedInUser != null) {
+
+			user.setDateModified(LocalDate.now());
+			System.out.println(user);
+			if (userService.updateUser(user) > 0) {
+
+				request.getSession().setAttribute("loggedInUser", user);
+				return USER_UPDATE_SUCCESSFUL;
+			} else {
+				return USER_UPDATE_FAILED;
+			}
+		} else {
+			throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
+		}
+	}
+
 	@PostMapping("/login")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
 	public @ResponseBody User loginUser(@RequestBody LoginForm loginForm, HttpServletRequest req) {
 
 		req.getSession().invalidate();
@@ -45,6 +69,7 @@ public class UserController {
 		String username = loginForm.getUserName();
 		String password = loginForm.getPassword();
 
+		System.out.println(username);
 		User loggedInUser = userService.login(username, password);
 
 		req.getSession().setAttribute("loggedInUser", loggedInUser);
@@ -66,6 +91,7 @@ public class UserController {
 	}
 
 	@PutMapping("/logout")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
 	public @ResponseBody ClientMessage logoutUser(HttpServletRequest request) {
 		User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 		System.out.println(loggedInUser);
@@ -84,7 +110,7 @@ public class UserController {
 				return LOGOUT_FAILED;
 			}
 		} else {
-			return LOGOUT_FAILED;
+			return NOT_AUTHENTICATED;
 		}
 	}
 	

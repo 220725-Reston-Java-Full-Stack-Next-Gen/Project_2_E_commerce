@@ -26,4 +26,6 @@ public interface ProductService {
     boolean insertProduct(String productName, double productPrice,String image_Link,
                           String productDescription, int productRating,ProductBrand productBrand,
                           ProductType productType, ProductColor productColor);
+
+    Product addProduct(Product product);
 }

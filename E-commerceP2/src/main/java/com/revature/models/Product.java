@@ -32,26 +32,18 @@ public class Product {
     @Column(name = "product_rating")
     private int productRating;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_brand_id", referencedColumnName = "product_brand_id")
     private ProductBrand productBrand ; 
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "type_id", referencedColumnName = "product_type_id")
     private ProductType productType ; 
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
-    private ProductColor productColor ;
 
-    public Product(String productName, double productPrice, String image_Link, String productDescription, int productRating, ProductBrand productBrand, ProductType productType, ProductColor productColor) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.image_Link = image_Link;
-        this.productDescription = productDescription;
-        this.productRating = productRating;
-        this.productBrand = productBrand;
-        this.productType = productType;
-        this.productColor = productColor;
-    }
+    private ProductColor productColor ; 
+
+
 }

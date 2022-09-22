@@ -19,7 +19,7 @@ public class ProductColor {
     @Column(name = "product_color_id")
     private int productColorID;
 
-    @Column(name = "color_hex_value", nullable = false)
+    @Column(name = "color_hex_value", nullable = false, unique = true)
     private String colorHexValue;
     
     @Column(name = "color_name", nullable = false)

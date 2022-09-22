@@ -1,266 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create Account</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="create_account.css">
-        <link rel="stylesheet" href="../css/navbar.css">
-        <link rel="stylesheet" href="../css/footer.css">
-        <style>
-            .btn {
-                float: right;
-            }
-    
-            .card {
-                padding: 0;
-            }
-        </style>
-    </head> 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand" href="home.html">
-                <img id="logo" src="../images/logo2.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="navbar-nav mr-auto">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </li>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/web/css/create_account.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+ 
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="/web/html/home.html">
+            <img id="logo" src="/web/images/logo2.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="products.html" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
-                        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-nav mr-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="products.html">Blush</a>
-                            <a class="dropdown-item" href="products.html">Bronzor</a>
-                            <a class="dropdown-item" href="products.html">Eyebrow</a>
-                            <a class="dropdown-item" href="products.html">Eyeliner</a>
-                            <a class="dropdown-item" href="products.html">Eyeshadow</a>
-                            <a class="dropdown-item" href="products.html">Foundation</a>
-                            <a class="dropdown-item" href="products.html">LipLiner</a>
-                            <a class="dropdown-item" href="products.html">Lipstick</a>
-                            <a class="dropdown-item" href="products.html">Mascara</a>
-                            <a class="dropdown-item" href="products.html">Nail Polish</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="products.html" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Brands
-                        </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/web/html/products.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </a>
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="products.html">almay</a>
-                            <a class="dropdown-item" href="products.html">alva</a>
-                            <a class="dropdown-item" href="products.html">anna sui</a>
-                            <a class="dropdown-item" href="products.html">annabelle</a>
-                            <a class="dropdown-item" href="products.html">benefit</a>
-                            <a class="dropdown-item" href="products.html">boosh</a>
-                            <a class="dropdown-item" href="products.html">burt's bees</a>
-                            <a class="dropdown-item" href="products.html">butter london</a>
-                            <a class="dropdown-item" href="products.html">c'est moi</a>
-                            <a class="dropdown-item" href="products.html">cargo cosmetics</a>
-                            <a class="dropdown-item" href="products.html">china glaze</a>
-                            <a class="dropdown-item" href="products.html">clinique</a>
-                            <a class="dropdown-item" href="products.html">coastal classic creation</a>
-                            <a class="dropdown-item" href="products.html">colourpop</a>
-                            <a class="dropdown-item" href="products.html">covergirl</a>
-                            <a class="dropdown-item" href="products.html">dalish</a>
-                            <a class="dropdown-item" href="products.html">deciem</a>
-                            <a class="dropdown-item" href="products.html">dior</a>
-                            <a class="dropdown-item" href="products.html">dr. hauschka</a>
-                            <a class="dropdown-item" href="products.html">e.l.f.</a>
-                            <a class="dropdown-item" href="products.html">essie</a>
-                            <a class="dropdown-item" href="products.html">fenty</a>
-                            <a class="dropdown-item" href="products.html">glossier</a>
-                            <a class="dropdown-item" href="products.html">green people</a>
-                            <a class="dropdown-item" href="products.html">iman</a>
-                            <a class="dropdown-item" href="products.html">l'oreal</a>
-                            <a class="dropdown-item" href="products.html">lotus cosmetics usa</a>
-                            <a class="dropdown-item" href="products.html">maia's mineral galaxy</a>
-                            <a class="dropdown-item" href="products.html">marcelle</a>
-                            <a class="dropdown-item" href="products.html">marienatie</a>
-                            <a class="dropdown-item" href="products.html">maybelline</a>
-                            <a class="dropdown-item" href="products.html">milani</a>
-                            <a class="dropdown-item" href="products.html">mineral fusion</a>
-                            <a class="dropdown-item" href="products.html">misa</a>
-                            <a class="dropdown-item" href="products.html">mistura</a>
-                            <a class="dropdown-item" href="products.html">moov</a>
-                            <a class="dropdown-item" href="products.html">nudus</a>
-                            <a class="dropdown-item" href="products.html">nyx</a>
-                            <a class="dropdown-item" href="products.html">orly</a>
-                            <a class="dropdown-item" href="products.html">pacifica</a>
-                            <a class="dropdown-item" href="products.html">penny lane organics</a>
-                            <a class="dropdown-item" href="products.html">physicians formula</a>
-                            <a class="dropdown-item" href="products.html">piggy paint</a>
-                            <a class="dropdown-item" href="products.html">pure anada</a>
-                            <a class="dropdown-item" href="products.html">rejuva minerals</a>
-                            <a class="dropdown-item" href="products.html">revlon</a>
-                            <a class="dropdown-item" href="products.html">sally b's skin yummies</a>
-                            <a class="dropdown-item" href="products.html">salon perfect</a>
-                            <a class="dropdown-item" href="products.html">sante</a>
-                            <a class="dropdown-item" href="products.html">sinful colours</a>
-                            <a class="dropdown-item" href="products.html">smashbox</a>
-                            <a class="dropdown-item" href="products.html">stila</a>
-                            <a class="dropdown-item" href="products.html">suncoat</a>
-                            <a class="dropdown-item" href="products.html">w3llpeople</a>
-                            <a class="dropdown-item" href="products.html">wet n wild</a>
-                            <a class="dropdown-item" href="products.html">zorah</a>
-                            <a class="dropdown-item" href="products.html">zorah biocosmetiques</a>
-
-                        </div>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Sales</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <svg class="fa-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path fill="#95654f" class="icon-svg"
-                                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-                            </svg>
-                            <span class="nav-text">Account</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="userAccount.html">Account</a>
-                            <a class="dropdown-item" href="orders.html">Orders</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="user_login.html">Login</a>
-                            <a class="dropdown-item" href="create_account.html">Create Account</a>
-                            <!-- TODO: logout with js -->
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">
-                            <svg class="fa-primary" id="cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                <path fill="#95654f" class="icon-svg"
-                                    d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z" />
-                            </svg>
-                            <span class="nav-text">Cart</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-        <body>
-            <div class="container">
-            <form>
-                <div class="card-group mt-5">
-                    <div class="card w-50">
-                        <h5 class="card-header">Create Account</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <span class="input-group-text">First Name</span>
-                                        <input type="text" class="form-control" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col">
-                                    <div class="input-group input-group-sm">
-                                        <span class="input-group-text">Last Name</span>
-                                        <input type="text" class="form-control" placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text"> Email Address</span>
-                                <input type="text" class="form-control" placeholder="Email Address">
-                            </div>
-                            <br>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text">Password</span>
-                                <input type="text" class="form-control" placeholder="Password">
-                            </div>
-                            <br>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text">Phone Number</span>
-                                <input type="text" class="form-control" placeholder="Phone Number">
-                            </div>
-                            <br>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text">Zip Code</span>
-                                <input type="text" class="form-control" placeholder="Zip code">
-                            </div>
-                                </div>
-                            </div>
-                            
-
-                        </div>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/web/html/products/type/blush.html">Blush</a>
+                        <a class="dropdown-item" href="/web/html/products/type/bronzor.html">Bronzor</a>
+                        <a class="dropdown-item" href="/web/html/products/type/eyebrow.html">Eyebrow</a>
+                        <a class="dropdown-item" href="/web/html/products/type/eyeliner.html">Eyeliner</a>
+                        <a class="dropdown-item" href="/web/html/products/type/eyeshadow.html">Eyeshadow</a>
+                        <a class="dropdown-item" href="/web/html/products/type/foundation.html">Foundation</a>
+                        <a class="dropdown-item" href="/web/html/products/type/lipliner.html">LipLiner</a>
+                        <a class="dropdown-item" href="/web/html/products/type/lipstick.html">Lipstick</a>
+                        <a class="dropdown-item" href="/web/html/products/type/mascara.html">Mascara</a>
+                        <a class="dropdown-item" href="/web/html/products/type/nail-polish.html">Nail Polish</a>
                     </div>
-        
-                <button type="submit" class="btn btn-primary">Join Now</button>
-        
-            </form>
-            </div>
-            </div>
-            <div>
-                <div id='footer' >
-                  <div class="footer">
-                    <footer class="DesktopFooter">
-                      <div class="DesktopFootertopContainer">
-                        <div class="BaseLayout">
-                          <div class="DesktopFootercontainer">
-                            <div class="DesktopFooterlinksContainer">
-                              <div class="DesktopFooterlinksColumn"></div>
-                              <div class="DesktopFooterlinksColumn">
-                                <h6 class="DesktopFooterlinkColumnHeader">About Us</h6>
-                                  <a class="Anchor" href="about.html" target="_self" tabindex="0" title="Our Team" data-nav-description="f - our ream">Our Team</a>
-                                  <a class="Anchor" href="#" target="_self" tabindex="0" title="Investor Relations" data-nav-description="f - investor relations">Investor Relations</a>
-                                  <a class="Anchor" href="#" target="_self" tabindex="0" title="Affiliates" data-nav-description="f - affiliates">Affiliates</a>
-                                  <a class="Anchor" href="#" target="_self" tabindex="0" title="Careers" data-nav-description="f - careers">Careers</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/web/html/products.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Brands
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/web/html/products/brand/almay.html">almay</a>
+                        <a class="dropdown-item" href="/web/html/products/brand/covergirl.html">covergirl</a>
+                        <a class="dropdown-item" href="/web/html/products/brand/marienatie.html">marienatie</a>
+                        <a class="dropdown-item" href="/web/html/products/brand/maybelline.html">maybelline</a>
+                        <a class="dropdown-item" href="/web/html/products/brand/nyx.html">nyx</a>
+                        <a class="dropdown-item" href="/web/html/products/brand/revlon.html">revlon</a>
+
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/web/html/sales.html">Sales</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <svg class="fa-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="#95654f" class="icon-svg"
+                                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                        </svg>
+                        <span class="nav-text">Account</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/web/html/userAccount.html">Account</a>
+                        <a class="dropdown-item" href="/web/html/orders.html">Orders</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/web/html/user_login.html">Login</a>
+                        <a class="dropdown-item" href="/web/html/create_account.html">Create Account</a>
+                        <!-- TODO: logout with js -->
+                        <a id="logout" class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/web/html/cart.html">
+                        <svg class="fa-primary" id="cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                            <path fill="#95654f" class="icon-svg"
+                                d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z" />
+                        </svg>
+                        <span class="nav-text">Cart</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="/web/javascript/logout.js"></script>
+</header>
+
+<body>
+    <div class="container">
+        <form id="createAcctForm">
+            <div class="card-group mt-5">
+                <div class="card w-50">
+                    <h5 class="card-header">Create Account</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">First Name</span>
+                                    <input type="text" class="form-control" placeholder="First Name" id="firstName" required>
+                                </div>
                             </div>
-                          </div>
+                            <br>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">Last Name</span>
+                                    <input type="text" class="form-control" placeholder="Last Name" id="lastName" required>
+                                </div>
+                            </div>
                         </div>
-                      </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">User Name</span>
+                                    <input type="text" class="form-control" placeholder="User Name" id="userName" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">Password</span>
+                                    <input type="password" class="form-control" placeholder="password" id="password" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text"> Email Address</span>
+                                    <input type="email" class="form-control" placeholder="Email Address" id="email" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text">Phone Number</span>
+                                    <input type="tel" class="form-control" placeholder="Phone Number" id="phoneNumber">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="input-group input-group-md">
+                            <span class="input-group-text">Street Address</span>
+                            <input type="text" class="form-control" placeholder="Street Address" id="address" required>
+                            <div class="valid-feedback">
+                                Valid input!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide a Address.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group input-group-md">
+                            <span class="input-group-text">Apt, suite, etc</span>
+                            <input type="text" class="form-control" placeholder="Apt, suite, etc (optional)" id="address-1">
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group input-group-md">
+                                    <span class="input-group-text">City</span>
+                                    <input type="text" class="form-control" placeholder="City" id="city" required>
+                                    <div class="valid-feedback">
+                                        Valid input!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please provide a City.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        
+                            <div class="col">
+                                <div class="input-group input-group-md">
+                                    <span class="input-group-text">State</span>
+                                    <select class="form-control" id="state" required>
+                                        <option value="" disabled selected hidden>N/A</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NY">New York</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="PR">Puerto Rico</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Valid input!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please select a State.
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="col">
+                                <div class="input-group input-group-md">
+                                    <span class="input-group-text">Zip Code</span>
+                                    <input type="text" class="form-control" placeholder="Zip code" id="zipcode" required>
+                                    <div class="valid-feedback">
+                                        Valid input!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please provide a Zip Code.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <input type="submit" class="btn btn-outline-success" id="joinNow-btn" value="Join Now">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+    </div>
+
+
+
+    </form>
+    </div>
+    </div>
+    <div>
+        <div id='footer'>
+            <div class="footer">
+                <footer class="DesktopFooter">
+                    <div class="DesktopFootertopContainer">
+                        <div class="BaseLayout">
+                            <div class="DesktopFootercontainer">
+                                <div class="DesktopFooterlinksContainer">
+                                    <div class="DesktopFooterlinksColumn"></div>
+                                    <div class="DesktopFooterlinksColumn">
+                                        <h6 class="DesktopFooterlinkColumnHeader">About Us</h6>
+                                        <a class="Anchor" href="about.html" target="_self" tabindex="0" title="Our Team"
+                                            data-nav-description="f - our ream">Our Team</a>
+                                        <a class="Anchor" href="#" target="_self" tabindex="0"
+                                            title="Investor Relations"
+                                            data-nav-description="f - investor relations">Investor Relations</a>
+                                        <a class="Anchor" href="#" target="_self" tabindex="0" title="Affiliates"
+                                            data-nav-description="f - affiliates">Affiliates</a>
+                                        <a class="Anchor" href="#" target="_self" tabindex="0" title="Careers"
+                                            data-nav-description="f - careers">Careers</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="BaseLayout">
-                      <div class="DesktopFooterbottomContainer">
-                        <div class="DesktopFootersmallText">
-                          <div class="DesktopFooterTandCterms1">
-                            <a class="Anchor" href="#" target="_self" tabindex="0" title="Terms &amp; Conditions" data-nav-description="f - terms &amp; coconditions">Terms &amp; Conditions |</a>
-                            <a class="Anchor" href="#" target="_self" tabindex="0" title="Privacy Policy" data-nav-description="f - privacy policy">Privacy Policy</a></div>
-                            <div class="DesktopFooterTandCterms2">
-                            <div class="DesktopFooterTandC__copyright">Copyright 2022-2022 Team Jerry, Inc.</div>
-                           </div>
-                          </div>
+                        <div class="DesktopFooterbottomContainer">
+                            <div class="DesktopFootersmallText">
+                                <div class="DesktopFooterTandCterms1">
+                                    <a class="Anchor" href="#" target="_self" tabindex="0"
+                                        title="Terms &amp; Conditions"
+                                        data-nav-description="f - terms &amp; coconditions">Terms &amp; Conditions |</a>
+                                    <a class="Anchor" href="#" target="_self" tabindex="0" title="Privacy Policy"
+                                        data-nav-description="f - privacy policy">Privacy Policy</a>
+                                </div>
+                                <div class="DesktopFooterTandCterms2">
+                                    <div class="DesktopFooterTandC__copyright">Copyright 2022-2022 Team Jerry, Inc.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </footer>
-                  </div>
-              </div>
-        
-        
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-        
-        
-        </body>
-        
-    
-   
+                </footer>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="/web/javascript/createAccount.js"></script>
+
+</body>
 
 
-    
+
+
+
+
 </html>
