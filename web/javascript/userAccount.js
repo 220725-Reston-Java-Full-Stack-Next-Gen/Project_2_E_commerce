@@ -21,40 +21,67 @@ var submit=document.getElementById("submit")
 
 
 submit.addEventListener("click", async()=> {
-    const firstname_value = username.value
-    const lastname_value = password.value
+    const firstname_value = firstname.value
+    const lastname_value = lastname.value
     const email_value = email.value
-    const phone_value = password.value
-    const streetaddress_value = username.value
-    const city_value = password.value
-    const state_value = username.value
-    const zipcode_value = password.value
+    const phone_value = phone.value
+    const streetaddress_value = streetaddress.value
+    const city_value = city.value
+    const state_value = state.value
+    const zipcode_value = zipcode.value
+
+    var newUser = {
+        "firstName":`${firstname_value}`,
+        "lastName":`${lastname_value}`,
+        "email":`${email_value}`,
+        "phoneNumber":`${phone_value}`,
+        "address":`${streetaddress_value}`,
+        "city":`${city_value}`,
+        "state":`${state_value}`,
+        "zipcode":`${zipcode_value}`,
+        "id":`${loggedInUser.id}`,
+        "userName":`${loggedInUser.userName}`,
+        "password":`${loggedInUser.password}`,
+        "userRole":{
+        "id":`${loggedInUser.userRole.id}`,
+        "role":`${loggedInUser.userRole.role}`
+        },
+        "dateCreated":`${loggedInUser.dateCreated}`  
+    }
 
     const update =await fetch(`http://localhost:8080/users/update`,{
        
         method: "PUT",
+        credentials: 'include',
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          "firstName":`${firstname_value}`,
-          "lastName":`${lastname_value}`,
-          "email":`${email_value}`,
-          "phoneNumber":`${phone_value}`,
-          "address":`${streetaddress_value}`,
-          "city":`${city_value}`,
-          "state":`${state_value}`,
-          "zipcode":`${zipcode_value}`,
-          
-          
-        })
+        body: JSON.stringify(newUser)
 
+    }).then((response) => {
+        console.log(response);
+        if (!response.ok) {
+            if (response.status === 403) { // User is currently not logged in.
+                console.log("Not Authenticated. Please log in with your credentials");
+            } else if (response.status === 500) { // Other backend error.
+                console.log("Server Error. Please try again.")
+            }
+            throw new Error(response.status);
+        } else {
+            return response.json();
+        }
+    }).then((response) => {
+        console.log(response);
+        if (response.message.startsWith("Something went wrong")) {
+            console.log(response.message);
+        } else {
+            sessionStorage.setItem("loggedInUser", JSON.stringify(newUser));
+        }
+        
 
+        window.location = "./home.html";
+    }).catch((error) => {
+        console.error(error);
     })
-}).then((response) => {
-    console.log(response);
-    sessionStorage.setItem("loggedInUser", JSON.stringify(response));
-
-    window.location = "./home.html";
 })
