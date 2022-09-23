@@ -14,11 +14,8 @@ import com.revature.services.utilityservices.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-<<<<<<< HEAD
-=======
 import javax.servlet.http.HttpServletRequest;
 
->>>>>>> Raphael
 @RestController
 @RequestMapping("/api/products")
 @CrossOrigin("http://127.0.0.1:5500")
@@ -37,58 +34,37 @@ public class ProductController {
 //    private ProductTypeService productTypeService;
 
     @GetMapping("/products")
-<<<<<<< HEAD
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
->>>>>>> Raphael
     public @ResponseBody List<Product> getAllProducts(){
         return productService.getAllProducts();
     }
 
     @GetMapping("/products-by-brand")
-<<<<<<< HEAD
-    public List<Product> getProductsByBrand(@RequestParam String brand){
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
     public List<Product> getProductsByBrand(@RequestParam String brand, HttpServletRequest request){
->>>>>>> Raphael
         return productService.getProductsByBrand(brand);
     }
 
     @GetMapping("/products-by-type")
-<<<<<<< HEAD
-    public List<Product> getProductsByType(@RequestParam String type){
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
     public List<Product> getProductsByType(@RequestParam String type, HttpServletRequest request){
         System.out.println(request.getSession().getId());
->>>>>>> Raphael
         return productService.getProductsByType(type);
     }
 
     @GetMapping("/product-by-id")
-<<<<<<< HEAD
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
->>>>>>> Raphael
     public Product getProductByID(@RequestParam int id){
         return productService.getProductById(id);
     }
 
     @DeleteMapping("/delete-product")
-<<<<<<< HEAD
-        public boolean deleteProductById(@RequestParam int id){
-        return productService.deleteProductById(id);
-    }
-
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.DELETE, allowedHeaders = "*")
     public boolean deleteProductById(@RequestParam int id){
         return productService.deleteProductById(id);
     }
 
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
->>>>>>> Raphael
     @PutMapping("/update-product")
     public boolean updateProductById(@RequestBody String productName,
                                      @RequestBody double productPrice,
@@ -105,12 +81,8 @@ public class ProductController {
     }
 
     @PostMapping("add-product")
-<<<<<<< HEAD
-    public Product addProduct(@RequestBody Product product) {
-=======
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
     public @ResponseBody Product addProduct(@RequestBody Product product) {
->>>>>>> Raphael
 
 //        , @RequestParam String type, @RequestParam String color, @RequestParam String brand
 //        ProductColor pc = new ProductColor();
@@ -130,8 +102,6 @@ public class ProductController {
         return productService.addProduct(product);
 
     }
-<<<<<<< HEAD
-=======
 
     @GetMapping("/search")
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
@@ -139,7 +109,6 @@ public class ProductController {
         return productService.searchProduct(query);
     }
 
->>>>>>> Raphael
 //
 //    @PostMapping("/populate-products")
 //    public String populateProducts(@RequestBody List<Product> products) {

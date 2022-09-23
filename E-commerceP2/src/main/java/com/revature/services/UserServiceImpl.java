@@ -18,16 +18,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepo userRepo;
 	
-<<<<<<< HEAD
-
-
-	public UserServiceImpl(UserRepo repo) {
-		this.userRepo = repo;
-	}
-	
-
-=======
->>>>>>> Raphael
 	@Override
 	public User login(String username, String password) {
 
@@ -63,10 +53,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		
 		User userTarget = userRepo.findbyUsername(username);
-<<<<<<< HEAD
-=======
 		System.out.println(userTarget);
->>>>>>> Raphael
 		return userTarget;
 	}
 

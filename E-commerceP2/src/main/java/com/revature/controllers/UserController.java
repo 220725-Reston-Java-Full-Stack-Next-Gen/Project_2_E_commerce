@@ -71,11 +71,7 @@ public class UserController {
 
 		System.out.println(username);
 		User loggedInUser = userService.login(username, password);
-<<<<<<< HEAD
-
-=======
 		System.out.println(loggedInUser);
->>>>>>> Raphael
 		req.getSession().setAttribute("loggedInUser", loggedInUser);
 
 		if (loggedInUser != null) {

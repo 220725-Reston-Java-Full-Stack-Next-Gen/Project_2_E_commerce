@@ -20,10 +20,6 @@ public class ProductBrand {
 
     @Column(name = "product_brand", nullable = false, unique = true)
     private String productBrand;
-
-    public ProductBrand(String productBrand) {
-        this.productBrand = productBrand;
-    }
 }
 
 

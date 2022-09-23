@@ -1,35 +1,15 @@
 package com.revature.controllers;
 
-<<<<<<< HEAD
-import com.revature.exceptions.InvalidParameterException;
-import com.revature.exceptions.NotAuthenticatedException;
-import com.revature.exceptions.NotAuthorizedException;
-import com.revature.exceptions.OrderNotFoundException;
-import com.revature.models.Order;
-import com.revature.models.OrderStatus;
-import com.revature.models.Payment;
-import com.revature.models.User;
-import com.revature.models.utilitymodels.ClientMessage;
-import com.revature.services.OrderDetailsService;
-import com.revature.services.OrderService;
-import com.revature.services.OrderStatusService;
-import com.revature.services.PaymentService;
-=======
 import com.revature.exceptions.*;
 import com.revature.models.*;
 import com.revature.models.utilitymodels.ClientMessage;
 import com.revature.services.*;
->>>>>>> Raphael
 import com.revature.utils.ClientMessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-<<<<<<< HEAD
-import java.time.LocalDate;
-=======
->>>>>>> Raphael
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +25,6 @@ public class OrderController {
     private OrderStatusService orderStatusService;
     @Autowired
     private OrderDetailsService orderDetailsService;
-<<<<<<< HEAD
-    
-    private PaymentService paymentService;
-
-
-    @PostMapping("/add")
-    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-=======
 
     @Autowired
     private CartItemService cartItemService;
@@ -62,18 +34,10 @@ public class OrderController {
 
     @PostMapping("/add")
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
->>>>>>> Raphael
     public @ResponseBody Order addOrder(@RequestBody Order order, HttpServletRequest request) {
         User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
         if (loggedInUser != null) {
-<<<<<<< HEAD
-            order.setDateCreated(LocalDateTime.now());
-            order.setOrderOwner(loggedInUser);
-            order.setOrderStatus(new OrderStatus(1, "pending"));
-            System.out.println(order);
-            return orderService.addOrder(order);
-=======
             Cart currentUserCart = cartService.getCart(loggedInUser);
 
             if (currentUserCart != null) {
@@ -129,16 +93,11 @@ public class OrderController {
             }
 
 
->>>>>>> Raphael
         } else {
             throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
         }
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> Raphael
     @GetMapping("/get-user-orders")
     @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
     public @ResponseBody List<Order> getOrdersByOwner(@RequestParam(required = false) String status, HttpServletRequest request) {
@@ -253,26 +212,5 @@ public class OrderController {
             return ClientMessageUtil.USER_DELETION_FAILED;
         }
     }
-<<<<<<< HEAD
-    
-    @PostMapping("/payment/add")
-    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-    public @ResponseBody ClientMessage addPayment(@RequestBody Payment payment, HttpServletRequest request) {
-        User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 
-        if (loggedInUser != null) {
-            payment.setPaymentDateCreated(LocalDate.now());
-            payment.setUser(loggedInUser);
-            payment.setPaymentStatus("pending");
-            System.out.println(payment);
-            return paymentService.addPayment(payment) ? ClientMessageUtil.PAYMENT_SUCCESSFUL : ClientMessageUtil.PAYMENT_FAILED;
-        } else {
-            throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
-        }
-    }
-    
-    
-=======
-
->>>>>>> Raphael
 }

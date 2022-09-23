@@ -20,13 +20,6 @@ public class ProductType {
 
     @Column(name = "product_type", nullable = false, unique = true)
     private String productType;
-<<<<<<< HEAD
-
-    public ProductType(String productType) {
-        this.productType = productType;
-    }
-=======
->>>>>>> Raphael
 }
 
 

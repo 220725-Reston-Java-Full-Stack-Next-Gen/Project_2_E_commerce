@@ -1,20 +1,5 @@
 package com.revature.controllers;
 
-<<<<<<< HEAD
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-=======
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -25,52 +10,28 @@ import com.revature.models.Product;
 import com.revature.services.CartItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
->>>>>>> Raphael
 
 import com.revature.models.Cart;
 import com.revature.models.User;
 import com.revature.services.CartService;
 
-<<<<<<< HEAD
-@Controller
-@CrossOrigin("http://127.0.0.1:5500")
-@RequestMapping("/cart")
-=======
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @CrossOrigin("http://127.0.0.1:5500")
 @RequestMapping("/api/cart")
->>>>>>> Raphael
 public class CartController {
 	//since this controller relies on the service layer, we need to inject this dependency into this class:
 	@Autowired
 	private CartService cartServ;
-<<<<<<< HEAD
-	
-=======
 
 	@Autowired
 	private CartItemService cartItemService;
 
->>>>>>> Raphael
 	@PostMapping("/create-cart")
 	public Cart createCart(@RequestParam Cart cart) {
 		return cartServ.createCart(cart);
 	}
-<<<<<<< HEAD
-	
-	@GetMapping("/get-cart")
-	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-	public @ResponseBody List<Cart> getCart(@RequestParam int userID){
-		return cartServ.getCart(userID);
-	}
-	
-	@GetMapping("/get-cart-items")
-	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-	public @ResponseBody List<Cart> getCartItems(@RequestParam int cartID){
-		return cartServ.getCart(cartID);
-=======
 
 	@GetMapping("/get-cart")
 	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
@@ -192,7 +153,6 @@ public class CartController {
 		} else {
 			throw new NotAuthenticatedException("Not Authenticated. Please log in with your credentials.");
 		}
->>>>>>> Raphael
 	}
 	
 	@PutMapping("/add-to-cart")
