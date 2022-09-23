@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -43,6 +42,8 @@ public class Product {
     
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
+
     private ProductColor productColor ; 
+
 
 }
