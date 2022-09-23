@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.revature.models.Cart;
@@ -16,7 +18,8 @@ import com.revature.models.User;
 import com.revature.services.CartService;
 
 @Controller
-@RequestMapping("/api")
+@CrossOrigin("http://127.0.0.1:5500")
+@RequestMapping("/cart")
 public class CartController {
 	//since this controller relies on the service layer, we need to inject this dependency into this class:
 	@Autowired
@@ -27,9 +30,10 @@ public class CartController {
 		return cartServ.createCart(cart);
 	}
 	
-	@GetMapping("/cart")
-	public List<Cart> getCart(@RequestParam User user){
-		return cartServ.getCart(user);
+	@GetMapping("/get-cart")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
+	public List<Cart> getCart(@RequestParam int userID){
+		return cartServ.getCart(userID);
 	}
 	
 	@PutMapping("/add-to-cart")
