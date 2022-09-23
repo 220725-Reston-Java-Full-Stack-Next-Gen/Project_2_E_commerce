@@ -22,62 +22,62 @@ This project will demonstrate an understanding of the fundamentals front-end and
     
 3. Customers can add items to their cart
     - [] Must have an amount (item quantity)
+   
+4. Customers can view all their items in the cart
+    - [] Must have an amount (item quantity)
+    - [] Must have a price quote for the order (before shipping costs and tax, which is added in the checkout page
     
-4. Product ratings to be displayed with products (star system)
+5. Product ratings to be displayed with products (star system)
     - [] Must have a rating of 0-5 stars
     
-5. Customers should have an account page
+6. Customers should have an account page
     - [] Has a User Profile Pic
     - [] Has customer info (first and last name, email, shipping address, payment info)
     
-6. Products should have their own product page
+7. Products should have their own product page
     - [] Has an image of the product
     - [] Has product info (name, brand, description, cost)
     - [] Has rating displayed
     
-7. Customers should have access to a checkout page
+8. Customers should have access to a checkout page
     - [] Has payment information (name, card or paypal, billing address)
     - [] Has order information (quantity, cost, tax, shipping fee, delivery address confirmation)
     
-8. Customers should have the ability to update their account page
+9. Customers should have the ability to update their account page
     - [] Ability to change profile picture
     - [] Ability to change account information (except username)
     
-9. Website should have a Home Page
+10. Website should have a Home Page
     - [] Logo
     - [] Category images
     
-10. Website should have a Search Bar
+11. Website should have a Search Bar
 	- [] Search functions for products, brands, etc
 	
-11. Website should have categories for the products
+12. Website should have categories for the products
     - [] Makeup types (face, lips, eyes)
     - [] Makeup tools (brushes, etc)
     - [] Makeup organizers
    
-12. Administrators should have the ability to login
+13. Administrators should have the ability to login
     - [] Username and password input
     
-13. Administrators should have their own account page
+14. Administrators should have their own account page
     - [] Unique ability to update product info
     - [] Unique ability to view previous orders
     - [] Unique ability to view current orders
     
 
 #### Stretch Goals (Additional Functionality)
-
-1. Customers can view all their items in the cart
-    - [] Must have an amount (item quantity)
-    - [] Must have a price quote for the order (before shipping costs and tax, which is added in the checkout page
     
-2. Customers can have the ability to view their orders page
+1. Customers can have the ability to view their orders page
     - [] Must have the ability to cancel orders
     - [] Must have the ability to update orders
 
-3. Customers can view previous purchases
+2. Customers can view previous purchases
     - [] Can have To-Be-Shipped, Shipped, and Delivered statuses
     
-4. Website Dark Mode UI
+3. Website Dark Mode UI
 
 ***
 ### Flowcharts
