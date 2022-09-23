@@ -1,8 +1,11 @@
 (function() {
 // VARS
+const cartProducts = document.querySelector("cart-items");
 const removeBtn = document.getElementById("btn2");
 const checkoutBtn = document.querySelector("right-bar");
-const cartContent = document.querySelector("shop");
+
+//var loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+//console.log(loggedInUser);
 
 
  // FUNCTIONS
@@ -11,16 +14,33 @@ const cartContent = document.querySelector("shop");
  async function getcartContent() {
     // get contents from database.
     // if nothing is there, create an empty array
-    const cartContent = await fetch(`http://localhost:8080/cart`,{
+    const cartContent = await fetch(`http://localhost:8080/cart/get-cart?userID=2`,{
 
         method: "GET",
+        mode: 'cors',
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-}) || [];
-    return cartContent;
-  }
+}).then((response) =>{
+    console.log(response);
+    
+    if(!response.ok){
+        if(response.status === 404) {
+            console.log("Error while trying to retrieve products. Error 404");
+            return Promise.reject('error 404')
+        }
+        else{
+            errorMessages = "Error while trying to retrieve products. Please try again.";
+            throw new Error(response.status)
+        }
+        
+    }
+    else{
+        return response.json()
+    }
+  });
+}
 
 //Save cart for user
 async function setcartContent(lsContent) {
@@ -79,35 +99,25 @@ async function setcartContent(lsContent) {
     }
   }
 
+  //Display the cart
   function displayCart() {
     // display all products in the cart
 
     // get contents from local storage
     const cartContent = getcartContent();
-    let productMarkup = "";
-    // if local storage is not empty, build the
-    // cart items markup and the appropriate details
-    if (cartContent !== null) {
-      for (let product of cartContent) {
-        productMarkup += `
-          <tr>
-          <td><img class="cart-image" src="${image_link}" alt="${
-          product_name
-        }" width="120"></td>
-          <td>
-            ${product_name}
-          </td>
-          <td>${product_price}</td>
-          <td><a href="#" data-id="${product_id}" class="remove">X</a></td>
-          </tr>
-        `;
-      }
-    } else {
-      // if no content is in local storage, alert user
-      productMarkup = "Your cart is empty.";
-    }
-    // add markup to DOM
-    cartContent.querySelector("tbody").innerHTML = productMarkup;
+    cartContent.forEach( (item) => {
+        cartProducts.innerHTML += `
+            <div class = "box">
+				<img src="${item.image_link}" alt = "${item.product_name}">
+				<div class="content">
+					<h3>${item.product_name}</h3>
+					<h4>Price: ${item.product_price}</h4>
+					<p class="unit">Quantity: <input name="" value="${item.product_quantity}"></p>
+					<p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
+				</div>
+			</div>
+        `
+    });
   }
 
   
