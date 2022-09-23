@@ -50,9 +50,9 @@ console.log(loggedInUser);
 }
 
 // cart array
-getcartContent();
-let cart2 = JSON.parse(sessionStorage.getItem("Cart"));
-console.log(cart2);
+//getcartContent();
+//let cart2 = JSON.parse(sessionStorage.getItem("Cart"));
+//console.log(cart2);
 
 
 //Get cart items
@@ -121,7 +121,7 @@ function updateCart() {
         console.log("Theres stuff")
         return cartProducts.innerHTML = cart2.map((x)=>{
             console.log(x);
-            let {cartID, item} = x
+            let {cartID, item} = x;
             return `
             <div class = "box">
 				<img src="${product.image_Link}" alt = "${item.product_name}">
