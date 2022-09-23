@@ -10,7 +10,10 @@ public interface CartService {
 	Cart createCart(Cart cart);
 	
 	// list cart
-	List<Cart> getCart(User user);
+	List<Cart> getCart(int userID);
+	
+	// list cart items
+	List<Cart> getCartItems(int cartID);
 	
 	//add an item to cart
 	boolean addToCart(int productID);
