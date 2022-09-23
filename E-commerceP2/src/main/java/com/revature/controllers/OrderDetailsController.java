@@ -17,12 +17,20 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+<<<<<<< HEAD
+=======
+@CrossOrigin("http://127.0.0.1:5500")
+>>>>>>> Raphael
 @RequestMapping("/api/orderdetails")
 public class OrderDetailsController {
     @Autowired
     private OrderDetailsService orderDetailsService;
 
     @PostMapping("/add")
+<<<<<<< HEAD
+=======
+    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.POST, allowedHeaders = "*")
+>>>>>>> Raphael
     public @ResponseBody ClientMessage addOrderDetailsList(@RequestBody List<OrderDetails> orderDetailsList, HttpServletRequest request) {
         User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
         System.out.println(orderDetailsList);
@@ -40,7 +48,12 @@ public class OrderDetailsController {
         }
     }
 
+<<<<<<< HEAD
     @GetMapping("get-details")
+=======
+    @CrossOrigin(allowCredentials = "true", methods = RequestMethod.PUT, allowedHeaders = "*")
+    @PutMapping("/get-details")
+>>>>>>> Raphael
     public @ResponseBody List<OrderDetails> getOrderDetailsList(@RequestBody Order order, HttpServletRequest request) {
         User loggedInUser = (User) request.getSession().getAttribute("loggedInUser");
 

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Raphael
 var loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
 
 var shopDiv = document.querySelector('.shop');
@@ -138,6 +141,7 @@ async function getCartItems() {
     }).catch((error) => {
         sessionStorage.removeItem("currentUserCart");
         console.error(error);
+<<<<<<< HEAD
 =======
 // VARS
 var cartProducts = document.getElementById("cart-item");
@@ -299,11 +303,16 @@ function updateCart() {
 			</div>
         `
 >>>>>>> e815d71ac51157e6eef8d289fdd75bdd7e23c939
+=======
+>>>>>>> Raphael
     });
 }
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Raphael
 async function removeCartItem(cartItem) {
     console.log(`${cartItem.product.productName}`);
     const checkCart = await fetch(`http://localhost:8080/api/cart/get-cart-items?cartID=${id}`, {
@@ -348,6 +357,7 @@ async function removeCartItem(cartItem) {
 }
 
 var checkoutBtn = document.getElementById("checkoutBtn");
+<<<<<<< HEAD
 =======
 //Calculate total for total price section (doesn't include tax right now)
   function calculateTotal(prices) {
@@ -445,3 +455,5 @@ var checkoutBtn = document.getElementById("checkoutBtn");
       displayCartTotal();
   })
 >>>>>>> e815d71ac51157e6eef8d289fdd75bdd7e23c939
+=======
+>>>>>>> Raphael

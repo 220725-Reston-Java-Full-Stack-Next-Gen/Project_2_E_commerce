@@ -42,8 +42,13 @@ public class Product {
     
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_color_id", referencedColumnName = "product_color_id")
+<<<<<<< HEAD
 
     private ProductColor productColor ; 
 
 
+=======
+    private ProductColor productColor ; 
+
+>>>>>>> Raphael
 }

@@ -5,6 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+<<<<<<< HEAD
+=======
+import java.io.Serializable;
+>>>>>>> Raphael
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -29,8 +33,14 @@ public class Cart {
     @Column(name = "date_modified")
     private LocalDateTime dateModified;
     
+<<<<<<< HEAD
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User userID;
+=======
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
+>>>>>>> Raphael
 
 }
