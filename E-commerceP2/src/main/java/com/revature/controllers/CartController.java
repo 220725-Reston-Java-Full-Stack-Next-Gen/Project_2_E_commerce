@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.models.Cart;
 import com.revature.models.User;
@@ -32,7 +33,7 @@ public class CartController {
 	
 	@GetMapping("/get-cart")
 	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
-	public List<Cart> getCart(@RequestParam int userID){
+	public @ResponseBody List<Cart> getCart(@RequestParam int userID){
 		return cartServ.getCart(userID);
 	}
 	

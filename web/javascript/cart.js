@@ -1,11 +1,11 @@
 (function() {
 // VARS
-const cartProducts = document.querySelector("cart-items");
+var cartProducts = document.getElementById("cart-item");
 const removeBtn = document.getElementById("btn2");
 const checkoutBtn = document.querySelector("right-bar");
 
-//var loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
-//console.log(loggedInUser);
+var loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+console.log(loggedInUser);
 
 
  // FUNCTIONS
@@ -14,7 +14,7 @@ const checkoutBtn = document.querySelector("right-bar");
  async function getcartContent() {
     // get contents from database.
     // if nothing is there, create an empty array
-    const cartContent = await fetch(`http://localhost:8080/cart/get-cart?userID=2`,{
+    const cartContent = await fetch(`http://localhost:8080/cart/get-cart?userID=${loggedInUser.id}`,{
 
         method: "GET",
         mode: 'cors',
@@ -37,37 +37,47 @@ const checkoutBtn = document.querySelector("right-bar");
         
     }
     else{
-        return response.json()
+        return response.json();
     }
+    
   });
+  return cartContent;
+}
+// cart array
+let cart = getcartContent() || [];
+updateCart();
+
+// update cart
+function updateCart() {
+   displayCart();
+    //renderSubtotal();
+  
+    // save cart to local storage
+    //sessionStorage.setItem("Cart", JSON.stringify(cart));
+  //}
+
+   //Display the cart
+   function displayCart() {
+    // display all products in the cart
+
+    // get contents from local storage
+    //const cartContent = getcartContent();
+    cart.forEach( (item) => {
+        cartProducts.innerHTML += `
+            <div class = "box">
+				<img src="${product.image_Link}" alt = "${item.product_name}">
+				<div class="content">
+					<h3>${item.product_name}</h3>
+					<h4>Price: ${item.product_price}</h4>
+					<p class="unit">Quantity: <input name="" value="${item.product_quantity}"></p>
+					<p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
+				</div>
+			</div>
+        `
+    });
+  }
 }
 
-//Save cart for user
-async function setcartContent(lsContent) {
-    // save content inside database
-    const cartContent = await fetch(`http://localhost:8080/cart`,{
-
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-}).then((response) =>{
-    console.log(response);
-
-    if(!response.ok){
-        errorMessages = "Error while trying to save cart. Please try again.";
-        throw new Error(response.status)
-    }
-}).catch((error) =>{
-
-
-    const errorTextMessage = document.getElementById("errorTextMessage");
-    errorTextMessage.innerHTML = errorMessages;
-
-    console.error(error);
-});
-}
 
 //Calculate total for total price section (doesn't include tax right now)
   function calculateTotal(prices) {
@@ -99,26 +109,6 @@ async function setcartContent(lsContent) {
     }
   }
 
-  //Display the cart
-  function displayCart() {
-    // display all products in the cart
-
-    // get contents from local storage
-    const cartContent = getcartContent();
-    cartContent.forEach( (item) => {
-        cartProducts.innerHTML += `
-            <div class = "box">
-				<img src="${item.image_link}" alt = "${item.product_name}">
-				<div class="content">
-					<h3>${item.product_name}</h3>
-					<h4>Price: ${item.product_price}</h4>
-					<p class="unit">Quantity: <input name="" value="${item.product_quantity}"></p>
-					<p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-				</div>
-			</div>
-        `
-    });
-  }
 
   
   function removeProduct(productId) {
