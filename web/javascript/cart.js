@@ -1,4 +1,3 @@
-(function() {
 // VARS
 var cartProducts = document.getElementById("cart-item");
 const removeBtn = document.getElementById("btn2");
@@ -51,53 +50,56 @@ console.log(loggedInUser);
 }
 
 // cart array
-//getcartContent();
+getcartContent();
 let cart2 = JSON.parse(sessionStorage.getItem("Cart"));
 console.log(cart2);
 
+
 //Get cart items
-async function getcartItemsContent() {
+//async function getcartItemsContent() {
     // get contents from database.
-    const cartItemsContent = await fetch(`http://localhost:8080/cart/get-cart-items?cart_id=${cart2.cartID}`,{
+    //const cartItemsContent = await fetch(`http://localhost:8080/cart/get-cart-items?cartID=${cart2.cartID}`,{
 
-        method: "GET",
-        mode: 'cors',
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-}).then((response) =>{
-    console.log(response);
+    //    method: "GET",
+    //    mode: 'cors',
+    //    headers: {
+     //     Accept: "application/json, text/plain, */*",
+    //      "Content-Type": "application/json",
+    //    },
+//}).then((response) =>{
+   // console.log(response);
     
-    if(!response.ok){
-        if(response.status === 404) {
-            console.log("Error while trying to retrieve products. Error 404");
-            return Promise.reject('error 404')
-        }
-        else{
-            errorMessages = "Error while trying to retrieve products. Please try again.";
-            throw new Error(response.status)
-        }
+   // if(!response.ok){
+  //      if(response.status === 404) {
+   //         console.log("Error while trying to retrieve products. Error 404");
+    //        return Promise.reject('error 404')
+    //    }
+    //    else{
+    //        errorMessages = "Error while trying to retrieve products. Please try again.";
+    //        throw new Error(response.status)
+    //    }
         
-    }
-    else{
-        return response.json();
-    }
-    
-  }).then((response) => {
-    console.log(response);
-    sessionStorage.setItem("Cart2", JSON.stringify(response));
+ //   }
+ //   else{
+ //       return response.json();
+ //   }
+ //   
+//  }).then((response) => {
+ //   console.log(response);
+//    sessionStorage.setItem("Cart2", JSON.stringify(response));
 
-    window.location = "./cart.html";
+//    window.location = "./cart.html";
     
-});
-  return cartItemsContent;
-}
+//});
+ // return cartItemsContent;
+//}
 
 //fetching cart items
 //getcartItemsContent();
-let cart1 = JSON.parse(sessionStorage.getItem("Cart2"));
-console.log(cart1);
+//let cart1 = JSON.parse(sessionStorage.getItem("Cart2"));
+//console.log(cart1);    
+
+
 updateCart();
 
 // update cart
@@ -253,5 +255,4 @@ function updateCart() {
 
       // adjust the total
       displayCartTotal();
-  });
-})();
+  })

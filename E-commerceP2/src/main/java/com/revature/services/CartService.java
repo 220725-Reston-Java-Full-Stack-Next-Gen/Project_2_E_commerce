@@ -13,17 +13,13 @@ public interface CartService {
 	List<Cart> getCart(int userID);
 	
 	// list cart items
-	List<Cart> getCartItems(int cart_id);
+	List<Cart> getCartItems(int cartID);
 	
 	//add an item to cart
 	boolean addToCart(int productID);
 	
 	//remove an item from cart
 	boolean removeFromCart(int productID);
-
-	List<Cart> getProductItems(int product_id);
-
-
 	
 	//maybe make a empty cart. Stretch goal, return here |
 	//                                                   V

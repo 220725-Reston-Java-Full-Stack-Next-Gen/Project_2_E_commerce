@@ -28,8 +28,8 @@ public class CartServiceImpl implements CartService {
 	}	
 	
 	@Override
-	public List<Cart> getCartItems(int cart_id) {
-		return cartRepo.getCart(cart_id);
+	public List<Cart> getCartItems(int cartID) {
+		return cartRepo.getCart(cartID);
 	}
 	
 	@Override
@@ -41,12 +41,5 @@ public class CartServiceImpl implements CartService {
 	public boolean removeFromCart(int ProductID) {
 		return cartRepo.delete(ProductID);	
 	}
-
-	@Override
-	public List<Cart> getProductItems(int product_id) {
-		return cartRepo.
-	}
-
-
 
 }
