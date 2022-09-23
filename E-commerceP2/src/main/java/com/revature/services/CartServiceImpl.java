@@ -21,9 +21,10 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<Cart> getCart(User user) {
-		return cartRepo.getCart(user.getId());
+	public List<Cart> getCart(int userID) {
+		return cartRepo.getCart(userID);
 	}	
+	
 	@Override
 	public boolean addToCart(int ProductID) {
 		return cartRepo.save(ProductID);

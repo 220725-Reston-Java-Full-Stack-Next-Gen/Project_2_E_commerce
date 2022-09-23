@@ -15,7 +15,7 @@ public interface CartRepo extends JpaRepository<Cart, Integer> {
 	@Query(value = "INSERT INTO cart (cartID) VALUES (DEFAULT)", nativeQuery = true)
 	public Cart saveNew(Cart cart);	
 	
-	@Query(value = "SELECT * FROM cart WHERE userID = ?1", nativeQuery = true)
+	@Query(value = "SELECT * FROM cart WHERE user_id = ?1", nativeQuery = true)
 	public List<Cart> getCart(int userID);
 
 	
