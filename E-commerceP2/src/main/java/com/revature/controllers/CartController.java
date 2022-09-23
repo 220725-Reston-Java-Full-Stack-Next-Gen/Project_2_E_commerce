@@ -37,6 +37,18 @@ public class CartController {
 		return cartServ.getCart(userID);
 	}
 	
+	@GetMapping("/get-cart-items")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
+	public @ResponseBody List<Cart> getCartItems(@RequestParam int cart_id){
+		return cartServ.getCartItems(cart_id);
+	}
+	
+	@GetMapping("/get-product-item")
+	@CrossOrigin(allowCredentials = "true", methods = RequestMethod.GET, allowedHeaders = "*")
+	public @ResponseBody List<Cart> getProductItems(@RequestParam int product_id){
+		return cartServ.getProductItems(product_id);
+	}
+	
 	@PutMapping("/add-to-cart")
 	public boolean addToCart(@RequestParam int ProductID) {
 		return cartServ.addToCart(ProductID);
