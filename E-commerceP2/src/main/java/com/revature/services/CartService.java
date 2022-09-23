@@ -12,6 +12,9 @@ public interface CartService {
 	// list cart
 	List<Cart> getCart(int userID);
 	
+	// list cart items
+	List<Cart> getCartItems(int cartID);
+	
 	//add an item to cart
 	boolean addToCart(int productID);
 	
