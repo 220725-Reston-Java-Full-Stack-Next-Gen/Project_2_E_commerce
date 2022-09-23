@@ -10,15 +10,7 @@ var submit=document.getElementById("submit")
 var errorMessages = "";
 
 submit.addEventListener("click", async(event)=> {
-<<<<<<< HEAD
-<<<<<<< HEAD
     event.preventDefault();
-=======
-    event.preventDefault()
->>>>>>> e815d71ac51157e6eef8d289fdd75bdd7e23c939
-=======
-    event.preventDefault();
->>>>>>> Raphael
     const username_value = username.value
     const password_value = password.value
     const login =await fetch(`http://localhost:8080/users/login`,{
