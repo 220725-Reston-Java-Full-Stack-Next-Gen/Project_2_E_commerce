@@ -79,6 +79,8 @@ This project will demonstrate an understanding of the fundamentals front-end and
 
 3. Customers can view previous purchases
     - [] Can have To-Be-Shipped, Shipped, and Delivered statuses
+    
+4. Website Dark Mode UI
 
 ***
 ### Flowcharts
