@@ -6,7 +6,8 @@ var submit=document.getElementById("submit")
 
 var errorMessages = "";
 
-submit.addEventListener("click", async()=> {
+submit.addEventListener("click", async(event)=> {
+    event.preventDefault()
     const username_value = username.value
     const password_value = password.value
     const login =await fetch(`http://localhost:8080/users/login`,{
