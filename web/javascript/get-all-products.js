@@ -154,7 +154,151 @@ async function getAllProducts() {
     })
 }
 
-getAllProducts();
+var searchTerm = localStorage.getItem("searchTerm");
+
+//getAllProducts();
+if (localStorage.getItem("searchTerm") !== null) {
+    //console.log(localStorage.getItem("searchTerm"))
+    let pageTitle = document.getElementById("pageTitle");
+    pageTitle.innerHTML = `Search Products: ${searchTerm} `;
+
+    searchProducts(searchTerm);
+} else {
+    console.log("ASDSADKALSJD");
+}
+
+
+async function searchProducts(searchTerm) {
+    console.log(searchTerm)
+    const getProducts = await fetch(`http://localhost:8080/api/products/search?query=${searchTerm}`,{
+        method: "GET",
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+            'content-type':'application/json'
+        },
+    }).then((response) =>{
+        localStorage.removeItem("searchTerm");
+        console.log(response);
+
+        if(!response.ok){
+            
+            throw new Error(response.status)
+        }
+        else{
+            
+            return response.json()
+
+        }
+        
+    }).then((response) => {
+        console.log(response);
+        if (response.length != 0) {
+            allHolderDiv.innerHTML = "";
+            //console.log(response);
+            
+            //var singleRowProducts = document.getElementsByClassName("single-row-products");
+            let count = 0;
+            let singleRowProductsHolder = document.createElement("div");
+            singleRowProductsHolder.classList.add("row", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none");
+            count = response.length;
+            for (const product of response) {
+            
+                let newProductHolderDiv = document.createElement("div");
+                if (count > 3) {
+                    newProductHolderDiv.classList.add("col-md-2", "col-12", "bg-light", "m-3", "p-3", "product-holder-template");
+                } else {
+                    newProductHolderDiv.classList.add("col-md-4", "col-12", "bg-light", "m-3", "p-3", "product-holder-template");
+                }
+                
+                
+                let imageHolderDiv = document.createElement("div");
+                let imageLink = document.createElement("a");
+                let productImage = document.createElement("img");
+    
+                // if (await checkPic(`${product.image_Link}`) === true) {
+                //     productImage.src = `${product.image_Link}`;
+                // } else {
+                //     //console.log(false);
+                //     productImage.src = "https://d3t32hsnjxo7q6.cloudfront.net/i/c2fcd605bbf3941b521fb74bfa942ac6_ra,w158,h184_pa,w158,h184.png";
+                // }
+                productImage.src = `${product.image_Link}`;
+                
+                productImage.classList.add("rounded-pill", "border", "border-secondary", "product-image-holder");
+                
+                imageLink.classList.add("d-flex", "justify-content-center");
+                
+                imageHolderDiv.classList.add("row", "justify-content-center");
+    
+                imageLink.append(productImage);
+                imageHolderDiv.append(imageLink);
+    
+                let starsHolderDiv = document.createElement("div");
+                starsHolderDiv.classList.add("row", "justify-content-center", "mb-3");
+    
+                for (let i = 0; i < product.productRating; i++) {
+                    let starIcon = document.createElement("i");
+                    starIcon.classList.add("fa-solid", "fa-star", "star-rating");
+                    starsHolderDiv.append(starIcon);
+                }
+    
+                let productNameH4 = document.createElement("h4");
+                productNameH4.classList.add("text-center", "product-name");
+                productNameH4.innerHTML = `${product.productName}`;
+    
+                let productNameH5 = document.createElement("h5");
+                productNameH5.classList.add("text-center", "price-text");
+                productNameH5.innerHTML = `$${product.productPrice.toFixed(2)}`;
+    
+                let productColorP = document.createElement("p");
+                productColorP.classList.add("text-center", "product-color");
+                productColorP.innerHTML = `Color: ${product.productColor.colorName}`;
+    
+                //let productColorBox = document.createElement(`<div class="color-box"></div>`);
+                let productColorBox = document.createElement("div");
+                let productColor = document.createElement("div");
+                productColorBox.classList.add("d-flex", "justify-content-center", "align-self-center");
+                productColor.classList.add("color-box", "d-flex", "justify-content-center", "align-self-center");
+    
+                productColor.style.backgroundColor = `${product.productColor.colorHexValue}`;
+                productColorBox.append(productColor);
+    
+    
+                let productHR = document.createElement("hr");
+                productHR.classList.add("my-2");
+                let productHR2 = document.createElement("hr");
+                productHR.classList.add("m-0");
+    
+                let buttonHolderDiv = document.createElement("div");
+                buttonHolderDiv.classList.add("row", "justify-content-center", "mt-4");
+                let addToCartbutton = document.createElement("button");
+                addToCartbutton.innerHTML = "Add To Cart"
+                addToCartbutton.classList.add("btn", "btn-secondary", "mb-2", "px-4");
+    
+                addToCartbutton.addEventListener('click', async() => {
+                    addToCartFunctionality(product);
+                });
+                buttonHolderDiv.append(addToCartbutton);
+    
+                newProductHolderDiv.append(imageHolderDiv, starsHolderDiv, productNameH4, productNameH5, productHR, productColorBox, productColorP, productHR2, buttonHolderDiv);
+                singleRowProductsHolder.append(newProductHolderDiv);
+    
+                singleRowProductsHolder.classList.add("row", "align-items-start", "justify-content-center", "mb-3", "single-row-products", "d-none")
+                
+                allHolderDiv.append(singleRowProductsHolder);
+                singleRowProductsHolder.setAttribute("style", "display: flex !important");
+            }
+        } else {
+            allHolderDiv.innerHTML = `<h4>No Products were found with that query. Please Try again</h4>`;
+        }
+        
+    }).catch((error) => {
+
+        console.log(error);
+    })
+
+}
+
 
 async function addToCartFunctionality(product) {
     console.log(`CART ${product.productPrice}`);

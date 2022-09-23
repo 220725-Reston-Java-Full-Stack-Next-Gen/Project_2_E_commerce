@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -12,7 +13,6 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "cart_items")
-
 public class CartItem {
 	
     @Id
@@ -32,11 +32,11 @@ public class CartItem {
     @Column(name = "date_modified")
     private LocalDateTime dateModified;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "cart_id", referencedColumnName = "cart_id")
     private Cart cart;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
     private Product product;
 

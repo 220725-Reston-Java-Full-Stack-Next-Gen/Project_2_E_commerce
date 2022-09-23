@@ -47,5 +47,7 @@ public interface ProductRepo extends JpaRepository<Product, Integer> {
                               ProductBrand productBrand, ProductType productType, ProductColor productColor);
 
 
+    @Query(value = "SELECT * FROM products WHERE product_name ILIKE %?1%", nativeQuery = true)
+    List<Product> search(String term);
 
 }

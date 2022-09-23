@@ -71,7 +71,7 @@ public class UserController {
 
 		System.out.println(username);
 		User loggedInUser = userService.login(username, password);
-
+		System.out.println(loggedInUser);
 		req.getSession().setAttribute("loggedInUser", loggedInUser);
 
 		if (loggedInUser != null) {

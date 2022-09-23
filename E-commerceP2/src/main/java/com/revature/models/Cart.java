@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -29,8 +30,8 @@ public class Cart {
     @Column(name = "date_modified")
     private LocalDateTime dateModified;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private User userID;
+    private User user;
 
 }

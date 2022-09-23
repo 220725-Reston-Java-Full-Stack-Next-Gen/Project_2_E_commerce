@@ -53,6 +53,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		
 		User userTarget = userRepo.findbyUsername(username);
+		System.out.println(userTarget);
 		return userTarget;
 	}
 

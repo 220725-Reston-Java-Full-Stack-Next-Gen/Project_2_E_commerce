@@ -28,4 +28,6 @@ public interface ProductService {
                           ProductType productType, ProductColor productColor);
 
     Product addProduct(Product product);
+
+    List<Product> searchProduct(String term);
 }

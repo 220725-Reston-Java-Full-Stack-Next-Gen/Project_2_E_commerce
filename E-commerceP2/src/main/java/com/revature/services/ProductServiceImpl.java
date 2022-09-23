@@ -67,4 +67,9 @@ public class ProductServiceImpl implements ProductService {
     public Product addProduct(Product product) {
         return productRepo.save(product);
     }
+
+    @Override
+    public List<Product> searchProduct(String term) {
+        return productRepo.search(term);
+    }
 }
