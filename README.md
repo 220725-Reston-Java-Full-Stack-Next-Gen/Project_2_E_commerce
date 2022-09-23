@@ -2,9 +2,6 @@
 # **E-Commerce Project**
 ## _Team Jerry_
 
-Team Jerry Logo HERE
----
-
 ### Executive Summary
 ***
 "This project is a full-stack application depicting an ECommerce website for makeup products. This application will allow you to browse different brands and types of makeup, adding them to your cart and paying for them in a simulation of a real internet shopping experience.
