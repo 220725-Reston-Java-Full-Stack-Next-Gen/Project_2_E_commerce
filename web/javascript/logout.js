@@ -12,23 +12,25 @@ logout.addEventListener("click", async()=> {
         
     }).then((response) => {
         console.log(response);
-        sessionStorage.removeItem("loggedInUser");
-        window.location = "./login.html";
         
+        if(!response.ok){
+            throw new Error(response.status)
+        }
+        else{
+            return response.json()
+        }
+
     }).then((response) => {
-    if(!response.ok){
-        throw new Error(response.status)
-    }
-    else{
-        return response.json()
-    }
     
-}).catch((error) =>{
+        sessionStorage.removeItem("loggedInUser");
+        sessionStorage.removeItem("currentUserCart");
+        window.location = "/web/html/user_login.html";
+    }).catch((error) =>{
 
+            // errorMessages = "";
+            // const errorTextMessage = document.getElementById("errorTextMessage");
+            // errorTextMessage.innerHTML = errorMessages;
 
-        const errorTextMessage = document.getElementById("errorTextMessage");
-        errorTextMessage.innerHTML = errorMessages;
-
-        console.error(error);
+            console.error(error);
+        })
     })
-})

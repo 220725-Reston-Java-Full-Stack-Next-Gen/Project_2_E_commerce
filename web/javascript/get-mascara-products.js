@@ -1,3 +1,22 @@
+
+var loggedInUser = JSON.parse(sessionStorage.loggedInUser || "{}");
+
+//let cartCounter = document.getElementById("cartCounter");
+
+// check if there is a loggedInUser
+if (Object.keys(loggedInUser).length !== 0) {
+
+    // check is user has an existing uncheckout cart
+    var currentUserCart = JSON.parse(sessionStorage.currentUserCart || "{}");
+
+    if (Object.keys(currentUserCart).length !== 0) {
+        cartCounter.innerHTML = `${currentUserCart.orderQuantity}`;
+    }
+}
+
+
+
+
 var allHolderDiv = document.getElementById("allHolderDiv");
 //console.log(singleRowProducts);
 
@@ -25,10 +44,11 @@ allHolderDiv.innerHTML = loader;
 //         return false;
 //     }) 
 // }
-async function getMascaraProducts() {
+async function getNailPolishProducts() {
     const getProducts = await fetch(`http://localhost:8080/api/products/products-by-type?type=mascara`,{
         method: "GET",
         mode: 'cors',
+        credentials:'include',
         headers: {
             'content-type':'application/json'
         },
@@ -127,7 +147,9 @@ async function getMascaraProducts() {
             addToCartbutton.classList.add("btn", "btn-secondary", "mb-2", "px-4");
 
             addToCartbutton.addEventListener('click', async() => {
-                addToCartFunctionality(product);
+                addToCartbutton.classList.remove("btn-secondary");
+                addToCartbutton.classList.add("btn-success");
+                createCart(product);
             });
             buttonHolderDiv.append(addToCartbutton);
 
@@ -152,7 +174,51 @@ async function getMascaraProducts() {
     })
 }
 
-getMascaraProducts();
+getNailPolishProducts();
+
+async function createCart(product) {
+
+    // check if there is a loggedInUser
+    if (Object.keys(loggedInUser).length !== 0) {
+
+        const checkCart = await fetch(`http://localhost:8080/api/cart/add-to-cart`, {
+            method: 'POST',
+            more: 'cors',
+            credentials: 'include',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(product)
+        }).then((response) => {
+            console.log(response);
+
+            if (!response.ok) {
+                if (response.status === 401) {
+                    //window.location = "/web/html/user_login.html";
+                }
+                throw new Error(response.status);
+            } else {
+                return response.json();
+            }
+
+        }).then((response) => {
+            console.log(response);
+            
+            cartCounter.innerHTML = `${response.orderQuantity}`;
+
+            sessionStorage.setItem("currentUserCart", JSON.stringify(response));
+
+        }).catch((error) => {
+            console.error(error);
+        });
+
+    } else {
+        console.log("User Not Authenticated.\nPlease Log in with your credentials.");
+        //window.location.href = "./login.html";
+    }
+    
+}
+
 
 async function addToCartFunctionality(product) {
     console.log(`CART ${product.productPrice}`);
